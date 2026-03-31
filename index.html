@@ -27,8 +27,8 @@
       <ul class="nav-links">
         <li><a href="#home">Inicio</a></li>
         <li><a href="#about">Sobre Mí</a></li>
+        <li><a href="#experience">Experiencia</a></li>
         <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#skills">Habilidades</a></li>
       </ul>
       <div class="nav-resume">
         <a href="#contact" class="btn btn-outline">Contacto</a>
@@ -39,7 +39,7 @@
   <!-- Hero Section -->
   <section id="home" class="hero section">
     <div class="container hero-container">
-      <div class="hero-text fade-in-up">
+      <div class="hero-text">
         <h1 class="title">Alejandro Rodríguez</h1>
         <h2 class="subtitle">Ingeniero de <span class="text-accent">IA</span></h2>
         <p class="description">
@@ -63,7 +63,7 @@
           </a>
         </div>
       </div>
-      <div class="hero-image glass-panel fade-in-up delay-1">
+      <div class="hero-image glass-panel">
         <div class="profile-frame">
           <img src="/avatar.jpeg" alt="Alejandro Rodríguez Moreno" class="profile-img" />
           <div class="glow-orb"></div>
@@ -74,7 +74,7 @@
 
   <!-- About Section -->
   <section id="about" class="about section">
-    <div class="container fade-in-up">
+    <div class="container">
       <h2 class="section-title">Sobre <span class="text-accent">Mí</span></h2>
       <div class="about-grid">
         <div class="about-text glass-panel">
@@ -83,7 +83,7 @@
             la extracción de información de valor en documentación no estructurada.</p>
           <ul class="about-highlights">
             <li>
-              <span class="highlight-icon">⚡</span>
+              <span class="highlight-icon"></span>
               <div>
                 <strong>IA Generativa y RAG</strong>
                 <p>Diseño e implementación de flujos end-to-end y sistemas RAG optimizados mediante FAISS, reduciendo
@@ -91,7 +91,7 @@
               </div>
             </li>
             <li>
-              <span class="highlight-icon">🧠</span>
+              <span class="highlight-icon"></span>
               <div>
                 <strong>Prompt Engineering Avanzado</strong>
                 <p>Aplicación de técnicas como mapas de tokens, contextualización semántica y literal boost para
@@ -99,7 +99,7 @@
               </div>
             </li>
             <li>
-              <span class="highlight-icon">☁️</span>
+              <span class="highlight-icon"></span>
               <div>
                 <strong>Arquitectura Serverless y Cloud</strong>
                 <p>Pipelines de OCR con Azure Document Intelligence y orquestación con Azure Functions y Docker.
@@ -109,33 +109,48 @@
           </ul>
         </div>
         <div class="about-stats glass-panel">
-          <h3>Habilidades Técnicas</h3>
+          <h3>Ecosistema Técnico</h3>
           <div class="skills-categories">
             <div class="skill-category">
-              <h4>Inteligencia Artificial</h4>
+              <h4>IA & Agentes</h4>
               <div class="skill-tags">
-                <span class="tag">Azure OpenAI</span>
-                <span class="tag">FAISS</span>
-                <span class="tag">Prompt Engineering</span>
+                <span class="tag">LMStudio</span>
                 <span class="tag">LangChain</span>
+                <span class="tag">LangGraph</span>
+                <span class="tag">AutoGen</span>
+                <span class="tag">RAG</span>
+                <span class="tag">FAISS</span>
+                <span class="tag">Azure OpenAI</span>
               </div>
             </div>
             <div class="skill-category">
-              <h4>Cloud & DevOps</h4>
-              <div class="skill-tags">
-                <span class="tag">Azure</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Kibana</span>
-                <span class="tag">Serverless</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h4>Lenguajes y Herramientas</h4>
+              <h4>Data & Backend</h4>
               <div class="skill-tags">
                 <span class="tag">Python</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">APIs REST</span>
-                <span class="tag">Unittest</span>
+                <span class="tag">Pandas / NumPy</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Java (Spring Boot)</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>DevOps & Ciberseguridad</h4>
+              <div class="skill-tags">
+                <span class="tag">Docker</span>
+                <span class="tag">Azure Functions</span>
+                <span class="tag">Git / GitHub</span>
+                <span class="tag">Linux/Bash</span>
+                <span class="tag">Hardening (ZFS)</span>
+                <span class="tag">Pentesting</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Lenguajes & Certificaciones</h4>
+              <div class="skill-tags">
+                <span class="tag">C++ / Rust / Java</span>
+                <span class="tag">Inglés B2 First</span>
+                <span class="tag">EY Agentic AI</span>
+                <span class="tag">Coursera GenAI</span>
               </div>
             </div>
           </div>
@@ -144,9 +159,67 @@
     </div>
   </section>
 
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">Experiencia <span class="text-accent">Profesional</span></h2>
+      <div class="timeline glass-panel">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Oct 2025 – Actualidad</div>
+          <div class="timeline-content">
+            <h3>Ingeniero de Datos e IA</h3>
+            <h4>EY (Ernst & Young)</h4>
+            <ul>
+              <li>Diseño de sistemas RAG con FAISS para el análisis masivo de ofertas técnicas (+100 págs),
+                automatizando flujos de toma de decisiones.</li>
+              <li>Implementación de motores de generación automática de informes mediante IA (Azure OpenAI), mejorando
+                la eficiencia del 90%.</li>
+              <li>Desarrollo de pipelines de OCR (Azure Document Intelligence) y lógica serverless con Azure Functions.
+              </li>
+              <li>Aplicación de Prompt Engineering avanzado: mapas de tokens, contextualización semántica y literal
+                boost.</li>
+              <li>Cobertura de tests 90% (unittest) y monitorización de trazas en Kibana.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Mar 2025 – Jun 2025</div>
+          <div class="timeline-content">
+            <h3>Investigador de IA (RAG)</h3>
+            <h4>Grupo NEO, Universidad de Málaga</h4>
+            <ul>
+              <li>Desarrollo de un sistema RAG para generación de casos de prueba industriales mediante servicios REST
+                en Flask.</li>
+              <li>Optimización de contexto y recursos (reducción el gasto en un 75%) y mejorando un 25% los tiempos de
+                respuesta de LLMs (Mistral).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Sep 2023 – Actualidad</div>
+          <div class="timeline-content">
+            <h3>Instructor Técnico y Mentor Académico</h3>
+            <h4>Freelance / UMA</h4>
+            <ul>
+              <li>Mentoría avanzada en Análisis de Algoritmos (Backtracking, Dinámica, Complejidad) y Programación (C++,
+                Python).</li>
+              <li>Instrucción en diseño relacional y SQL.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Projects Section -->
   <section id="projects" class="projects section">
-    <div class="container fade-in-up">
+    <div class="container">
       <h2 class="section-title">Proyectos <span class="text-accent">Destacados</span></h2>
 
       <div class="projects-grid">
@@ -182,28 +255,33 @@
           </div>
         </article>
 
-        <!-- Proyecto 2 -->
+        <!-- Proyecto pionex_py -->
         <article class="project-card glass-panel">
           <div class="project-image">
-            <img src="/rpg-cover.jpeg" alt="AI Rol Game">
+            <img src="/pionex.jpg" alt="pionex_py API Wrapper">
           </div>
           <div class="project-content">
             <div class="project-header">
-              <span class="project-overline">LLM & Videojuegos</span>
-              <h3 class="project-title">AI Rol Game</h3>
+              <span class="project-overline">Open Source & Trading</span>
+              <h3 class="project-title">pionex_py (PyPI)</h3>
             </div>
             <p class="project-desc">
-              Un juego de rol donde el Game Master es un LLM en local (Qwen + LangChain). Cuenta con creación de
-              personajes, sistema de misiones y combate. Reforzado mediante prompts complejos para mantenerse fiel a la
-              historia y contexto del mapa.
+              Desarrollo de un Wrapper de API en Python para el exchange Pionex. Gestión
+              de peticiones REST, empaquetado y documentación técnica para trading algorítmico.
             </p>
             <ul class="project-tech">
-              <li>LangChain</li>
-              <li>Qwen (Local)</li>
-              <li>LLM Tools</li>
-              <li>Prompt Engineering</li>
+              <li>Python</li>
+              <li>API REST</li>
+              <li>PyPI</li>
+              <li>Algo Trading</li>
             </ul>
             <div class="project-links">
+              <a href="https://pypi.org/project/pionex_py/" target="_blank" class="btn-icon" title="Ver en PyPI">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                </svg>
+              </a>
               <a href="https://github.com/alejandrorodm" target="_blank" class="btn-icon" title="Ver Repositorio">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                   <path
@@ -214,20 +292,20 @@
           </div>
         </article>
 
-        <!-- Proyecto 3 -->
+        <!-- Proyecto Backtesting -->
         <article class="project-card glass-panel">
           <div class="project-image">
-            <img src="/crypto-cover.jpeg" alt="Crypto Price Retrieval">
+            <img src="/crypto-cover.jpeg" alt="Crypto Backtesting">
           </div>
           <div class="project-content">
             <div class="project-header">
-              <span class="project-overline">Trading Automático</span>
-              <h3 class="project-title">Crypto Price Retrieval & Backtesting</h3>
+              <span class="project-overline">Ingesta & Data Science</span>
+              <h3 class="project-title">Plataforma Backtesting Cripto</h3>
             </div>
             <p class="project-desc">
-              Aplicación avanzada que incorpora indicadores técnicos (RSI, Bollinger) y evalúa estrategias mediante
-              backtesting automático. Soporta spot y futuros con gestión realista de apalancamiento, comisiones y stop
-              loss.
+              Motor de ingesta masiva de datos en Python (multihilo) para APIs externas. Integración de indicadores
+              matemáticos (EMA, RSI, Bollinger) y Random Forest para generación de señales de trading y sistema de
+              reportes de rentabilidad.
             </p>
             <ul class="project-tech">
               <li>Python</li>
@@ -246,32 +324,28 @@
           </div>
         </article>
 
-        <!-- Proyecto 4 -->
+        <!-- Proyecto Vodafone Lab -->
         <article class="project-card glass-panel">
           <div class="project-image">
-            <img src="/pomodoro-cover.png" alt="Pomodoro Power App">
+            <img src="/anasa.png" alt="Vodafone Campus Lab">
           </div>
           <div class="project-content">
             <div class="project-header">
-              <span class="project-overline">Productividad & Frontend</span>
-              <h3 class="project-title">Pomodoro Power</h3>
+              <span class="project-overline">IoT & Liderazgo</span>
+              <h3 class="project-title">Vodafone Campus Lab</h3>
             </div>
             <p class="project-desc">
-              Aplicación de productividad basada en la técnica Pomodoro. Incluye gestión de etiquetas, registro de
-              sesiones, calendario interactivo y medición de productividad esperada.
+              Liderazgo de equipo en el desarrollo de una solución IoT/AI para la independencia de personas mayores.
+              Galardonado con el <strong>2º Puesto Internacional</strong>.
             </p>
             <ul class="project-tech">
-              <li>Frontend</li>
-              <li>JavaScript</li>
-              <li>Time Management</li>
+              <li>IoT</li>
+              <li>IA</li>
+              <li>Design Thinking</li>
+              <li>Liderazgo</li>
             </ul>
             <div class="project-links">
-              <a href="https://github.com/alejandrorodm" target="_blank" class="btn-icon" title="Ver Repositorio">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                  <path
-                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                </svg>
-              </a>
+              <span class="btn-icon">🏆 2º Puesto</span>
             </div>
           </div>
         </article>
@@ -307,6 +381,39 @@
             </div>
           </div>
         </article>
+
+        <!-- Proyecto 6 Self-Hosting -->
+        <article class="project-card glass-panel">
+          <div class="project-image">
+            <img src="/casaOS.jpg" alt="OrangePi Cloud Server">
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <span class="project-overline">DevOps & Home Server</span>
+              <h3 class="project-title">OrangePi Cloud Server</h3>
+            </div>
+            <p class="project-desc">
+              Servidor self-hosted sobre una <strong>OrangePi Zero 3</strong> con SO Armbian. Orquestación completa
+              mediante contenedores Docker para servicios privados como <strong>Immich</strong> (fotos al estilo Google
+              Photos), <strong>Nextcloud</strong> (servidor en red) y <strong>Plex</strong> (centro multimedia).
+            </p>
+            <ul class="project-tech">
+              <li>Docker</li>
+              <li>Armbian</li>
+              <li>OrangePi Hardware</li>
+              <li>Self-Hosting</li>
+            </ul>
+            <div class="project-links">
+              <span class="btn-icon" title="Infraestructura Local"
+                style="display:inline-flex; align-items:center; gap:0.4rem; padding: 0.4rem 0.8rem; font-size:0.9rem;">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </svg>
+                Local Server
+              </span>
+            </div>
+          </div>
+        </article>
       </div>
       <div class="projects-footer">
         <a href="https://github.com/alejandrorodm" target="_blank" class="btn btn-outline">Ver todos en GitHub</a>
@@ -316,7 +423,7 @@
 
   <!-- Contact Section -->
   <section id="contact" class="contact section">
-    <div class="container fade-in-up">
+    <div class="container">
       <div class="contact-box glass-panel">
         <h2 class="title">¿Trabajamos <span class="text-accent">Juntos?</span></h2>
         <p>Siempre estoy abierto a discutir nuevos proyectos, ideas innovadoras en IA o simplemente conectar. Puedes

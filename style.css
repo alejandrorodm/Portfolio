@@ -1,14 +1,14 @@
 :root {
-  /* Paleta Oscura Futurista */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #13141f;
-  --text-primary: #f8f9fa;
-  --text-secondary: #a0aab2;
-  --accent: #5e17eb;
-  --accent-light: #8c52ff;
-  --accent-glow: rgba(94, 23, 235, 0.5);
-  --glass-bg: rgba(19, 20, 31, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  /* Paleta Profesional (Corporate Tech Dark Mode) */
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.4);
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.06);
   
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -122,8 +122,8 @@ a {
 }
 
 .glass-panel:hover {
-  border-color: rgba(140, 82, 255, 0.3);
-  box-shadow: 0 8px 40px rgba(94, 23, 235, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 40px rgba(37, 99, 235, 0.15);
 }
 
 /* Botones */
@@ -161,7 +161,7 @@ a {
 .btn-outline:hover {
   border-color: var(--accent-light);
   color: var(--accent-light);
-  background: rgba(140, 82, 255, 0.05);
+  background: rgba(59, 130, 246, 0.05);
 }
 
 .btn-icon {
@@ -335,7 +335,7 @@ a {
 
 .highlight-icon {
   font-size: 1.5rem;
-  background: rgba(140, 82, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   padding: 0.5rem;
   border-radius: 8px;
   border: 1px solid var(--glass-border);
@@ -381,7 +381,7 @@ a {
 }
 
 .tag:hover {
-  background: rgba(140, 82, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   color: var(--accent-light);
   border-color: var(--accent-light);
 }
@@ -521,21 +521,76 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Utilidades: Animations */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+/* Componente Timeline para Experiencia */
+.timeline {
+  position: relative;
+  margin: 3rem 0;
+  padding-left: 2rem;
+  border-left: 2px solid var(--glass-border);
 }
 
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
 }
 
-.delay-1 {
-  transition-delay: 0.2s;
+.timeline-item:last-child {
+  margin-bottom: 0;
 }
+
+.timeline-dot {
+  position: absolute;
+  left: -2.4rem;
+  top: 0.2rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.timeline-date {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--accent-light);
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.timeline-content h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.timeline-content ul {
+  list-style: none;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.timeline-content ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-light);
+}
+
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -563,10 +618,17 @@ footer {
 
 @media (max-width: 768px) {
   .hero .title {
-    font-size: 3rem;
-  }
-  .section-title {
     font-size: 2.5rem;
+  }
+  .section-title, .contact-box .title {
+    font-size: 2.2rem;
+  }
+  .contact-box {
+    padding: 2.5rem 1.5rem;
+  }
+  .contact-links {
+    flex-direction: column;
+    gap: 1rem;
   }
   .nav-links {
     display: none; /* simple mobile hide for now */

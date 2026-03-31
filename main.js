@@ -8,25 +8,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Intersection Observer para las animaciones Fade-In-Up
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.15
-};
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target); // Solo anima una vez
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in-up').forEach(element => {
-  observer.observe(element);
-});
 
 // Smooth scroll para todos los links internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
