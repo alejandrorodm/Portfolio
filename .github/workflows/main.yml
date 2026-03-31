@@ -28,7 +28,8 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          source: "dist/*"        # Solo enviamos lo que hay dentro de dist
-          target: "/var/www/html" # Carpeta de Nginx
-          strip_components: 1     # Importante: para que no cree una carpeta /html/dist/
+          key: ${{ secrets.SSH_KEY }}
+          source: "dist/*"
+          target: "/var/www/html"
+          strip_components: 1
+          overwrite: true
