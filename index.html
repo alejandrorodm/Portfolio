@@ -42,10 +42,17 @@
       <div class="hero-text">
         <h1 class="title">Alejandro Rodríguez</h1>
         <h2 class="subtitle">Ingeniero de <span class="text-accent">IA</span></h2>
-        <p class="description">
-          Trabajando en <strong>Ernst & Young</strong>. Me especializo en el diseño y despliegue de soluciones avanzadas
-          de IA Generativa y arquitecturas Cloud, transformando datos complejos en información de valor.
-        </p>
+        <div class="terminal-glass glass-panel" style="max-width: 500px; margin-bottom: 2rem; padding: 1.5rem; text-align: left; font-family: monospace;">
+          <div class="terminal-header" style="display: flex; gap: 8px; margin-bottom: 1rem; align-items: center;">
+            <span class="term-dot" style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f56;"></span>
+            <span class="term-dot" style="width: 12px; height: 12px; border-radius: 50%; background: #ffbd2e;"></span>
+            <span class="term-dot" style="width: 12px; height: 12px; border-radius: 50%; background: #27c93f;"></span>
+            <span class="term-title" style="margin-left: auto; color: #94a3b8; font-size: 0.8rem;">bash - a.rodriguez@ey</span>
+          </div>
+          <div class="terminal-body" style="color: #f8fafc; font-size: 1rem; line-height: 1.5;">
+            <span class="term-prompt" style="color: #27c93f;">~$</span> <span id="typewriter-text"></span><span class="cursor" style="display: inline-block; width: 8px; height: 1.2em; background-color: var(--accent-light); animation: blink 1s step-end infinite; vertical-align: middle; margin-left: 2px;"></span>
+          </div>
+        </div>
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">Ver mis proyectos</a>
           <a href="https://github.com/alejandrorodm" target="_blank" rel="noopener noreferrer" class="btn btn-icon">
@@ -110,49 +117,37 @@
         </div>
         <div class="about-stats glass-panel">
           <h3>Ecosistema Técnico</h3>
-          <div class="skills-categories">
-            <div class="skill-category">
-              <h4>IA & Agentes</h4>
-              <div class="skill-tags">
-                <span class="tag">LMStudio</span>
-                <span class="tag">LangChain</span>
-                <span class="tag">LangGraph</span>
-                <span class="tag">AutoGen</span>
-                <span class="tag">RAG</span>
-                <span class="tag">FAISS</span>
-                <span class="tag">Azure OpenAI</span>
-              </div>
+          <!-- Carrusel de Logos (Infinite Scroll) -->
+          <div class="skills-slider">
+            <div class="skills-track">
+              <!-- Stack Técnico -->
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash"><span>Bash</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring"><span>Spring</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
+              
+              <!-- Stack duplicado para infinite scroll CSS -->
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure"><span>Azure</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash"><span>Bash</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring"><span>Spring</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
             </div>
-            <div class="skill-category">
-              <h4>Data & Backend</h4>
-              <div class="skill-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Pandas / NumPy</span>
-                <span class="tag">SQL Server</span>
-                <span class="tag">Flask</span>
-                <span class="tag">Java (Spring Boot)</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h4>DevOps & Ciberseguridad</h4>
-              <div class="skill-tags">
-                <span class="tag">Docker</span>
-                <span class="tag">Azure Functions</span>
-                <span class="tag">Git / GitHub</span>
-                <span class="tag">Linux/Bash</span>
-                <span class="tag">Hardening (ZFS)</span>
-                <span class="tag">Pentesting</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h4>Lenguajes & Certificaciones</h4>
-              <div class="skill-tags">
-                <span class="tag">C++ / Rust / Java</span>
-                <span class="tag">Inglés B2 First</span>
-                <span class="tag">EY Agentic AI</span>
-                <span class="tag">Coursera GenAI</span>
-              </div>
-            </div>
+          </div>
+          <!-- Etiquetas complementarias -->
+          <div class="skill-tags" style="margin-top: 2rem; justify-content: center;">
+            <span class="tag">RAG / FAISS</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">AutoGen</span>
+            <span class="tag">Azure OpenAI</span>
+            <span class="tag">LMStudio</span>
           </div>
         </div>
       </div>
@@ -168,8 +163,15 @@
           <div class="timeline-dot"></div>
           <div class="timeline-date">Oct 2025 – Actualidad</div>
           <div class="timeline-content">
-            <h3>Ingeniero de Datos e IA</h3>
-            <h4>EY (Ernst & Young)</h4>
+            <div class="timeline-header-flex">
+              <div>
+                <h3>Ingeniero de Datos e IA</h3>
+                <h4>EY (Ernst & Young)</h4>
+              </div>
+              <div class="metric-highlight glass-panel tooltip">+90%<br><span>Eficiencia</span>
+                <span class="tooltiptext">Automatización mejorada en flujos documentales</span>
+              </div>
+            </div>
             <ul>
               <li>Diseño de sistemas RAG con FAISS para el análisis masivo de ofertas técnicas (+100 págs),
                 automatizando flujos de toma de decisiones.</li>
@@ -188,8 +190,15 @@
           <div class="timeline-dot"></div>
           <div class="timeline-date">Mar 2025 – Jun 2025</div>
           <div class="timeline-content">
-            <h3>Investigador de IA (RAG)</h3>
-            <h4>Grupo NEO, Universidad de Málaga</h4>
+            <div class="timeline-header-flex">
+              <div>
+                <h3>Investigador de IA (RAG)</h3>
+                <h4>Grupo NEO, Universidad de Málaga</h4>
+              </div>
+              <div class="metric-highlight glass-panel tooltip">-75%<br><span>Costes</span>
+                <span class="tooltiptext">Optimización radical de contexto LLM</span>
+              </div>
+            </div>
             <ul>
               <li>Desarrollo de un sistema RAG para generación de casos de prueba industriales mediante servicios REST
                 en Flask.</li>
@@ -245,6 +254,7 @@
               <li>Manipulación de APIs</li>
             </ul>
             <div class="project-links">
+              <button class="btn btn-primary open-modal-btn" data-project="tfg">Ver Caso de Estudio</button>
               <a href="https://github.com/alejandrorodm" target="_blank" class="btn-icon" title="Ver Repositorio">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                   <path
@@ -314,6 +324,7 @@
               <li>Trading Algos</li>
             </ul>
             <div class="project-links">
+              <button class="btn btn-primary open-modal-btn" data-project="crypto">Ver Caso de Estudio</button>
               <a href="https://github.com/alejandrorodm" target="_blank" class="btn-icon" title="Ver Repositorio">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                   <path
@@ -426,9 +437,22 @@
     <div class="container">
       <div class="contact-box glass-panel">
         <h2 class="title">¿Trabajamos <span class="text-accent">Juntos?</span></h2>
-        <p>Siempre estoy abierto a discutir nuevos proyectos, ideas innovadoras en IA o simplemente conectar. Puedes
-          encontrarme en mis redes o echar un vistazo a mis repositorios.</p>
-        <div class="contact-links">
+        <p>Siempre estoy abierto a discutir nuevos proyectos e ideas innovadoras en IA. Rellena el formulario o envíame un mensaje directo.</p>
+        
+        <form class="contact-form" action="mailto:correo@alejandrorodm.com" method="post" enctype="text/plain">
+          <div class="form-group">
+            <input type="text" placeholder="Tu Nombre / Empresa" required class="form-control">
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Tu Mensaje" rows="5" required class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+        </form>
+
+        <div class="contact-links" style="margin-top: 2.5rem;">
+          <a href="mailto:correo@alejandrorodm.com" class="contact-link">
+            <span class="text-accent">✉</span> Contacto Directo
+          </a>
           <a href="https://github.com/alejandrorodm" target="_blank" class="contact-link">
             <span class="text-accent">→</span> Mi GitHub
           </a>
@@ -440,10 +464,35 @@
     </div>
   </section>
 
+  <!-- Proyecto Modal -->
+  <div id="case-study-modal" class="modal-overlay hidden">
+    <div class="modal-container glass-panel">
+      <div class="modal-header">
+        <div class="modal-overline" id="modal-overline">Categoría</div>
+        <h2 id="modal-title">Título del Proyecto</h2>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="case-study-section">
+          <h3><span class="text-accent">P.</span> El Problema</h3>
+          <p id="modal-problem"></p>
+        </div>
+        <div class="case-study-section">
+          <h3><span class="text-accent">S.</span> Solución Arquitectónica</h3>
+          <p id="modal-solution"></p>
+        </div>
+        <div class="case-study-section">
+          <h3><span class="text-accent">R.</span> Resultados Medibles</h3>
+          <p id="modal-results"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 Alejandro Rodríguez Moreno.</p>
+      <p>&copy; 2026 Alejandro Rodríguez Moreno. Diseñado para el Futuro.</p>
     </div>
   </footer>
 
