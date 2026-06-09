@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440" font-family="'Outfit','Segoe UI',sans-serif">
+  <defs>
+    <linearGradient id="tk-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="tk-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <radialGradient id="tk-glow" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="440" fill="url(#tk-bg)"/>
+  <rect width="800" height="440" fill="url(#tk-glow)"/>
+  <!-- receipt -->
+  <g transform="translate(290 70)">
+    <path d="M0 0 H220 V300 L196 286 L172 300 L148 286 L124 300 L100 286 L76 300 L52 286 L28 300 L0 286 Z"
+          fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+    <rect x="34" y="30" width="152" height="16" rx="4" fill="#334155"/>
+    <g fill="#475569">
+      <rect x="34" y="78" width="110" height="11" rx="3"/><rect x="150" y="78" width="36" height="11" rx="3"/>
+      <rect x="34" y="106" width="92" height="11" rx="3"/><rect x="150" y="106" width="36" height="11" rx="3"/>
+      <rect x="34" y="134" width="120" height="11" rx="3"/><rect x="150" y="134" width="36" height="11" rx="3"/>
+      <rect x="34" y="162" width="80" height="11" rx="3"/><rect x="150" y="162" width="36" height="11" rx="3"/>
+    </g>
+    <rect x="34" y="206" width="152" height="2" fill="#334155"/>
+    <rect x="34" y="224" width="70" height="14" rx="3" fill="#93c5fd"/>
+    <rect x="138" y="224" width="48" height="14" rx="3" fill="#22d3ee"/>
+    <!-- scan line -->
+    <rect x="-12" y="150" width="244" height="4" rx="2" fill="url(#tk-accent)"/>
+    <rect x="-12" y="150" width="244" height="40" fill="url(#tk-accent)" opacity="0.12"/>
+  </g>
+  <!-- AI spark -->
+  <g transform="translate(545 150)" fill="#22d3ee">
+    <path d="M0 -34 L9 -9 L34 0 L9 9 L0 34 L-9 9 L-34 0 L-9 -9 Z"/>
+  </g>
+  <g transform="translate(600 250)" fill="#3b82f6">
+    <path d="M0 -16 L4 -4 L16 0 L4 4 L0 16 L-4 4 L-16 0 L-4 -4 Z"/>
+  </g>
+  <text x="400" y="412" text-anchor="middle" fill="#f8fafc" font-size="34" font-weight="800" letter-spacing="1">TicketSaver</text>
+  <text x="400" y="46" text-anchor="middle" fill="#22d3ee" font-size="15" font-weight="600" letter-spacing="3">AI RECEIPT SCANNER · GEMINI</text>
+</svg>

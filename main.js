@@ -77,6 +77,13 @@ const projectData = {
     solution: "Se diseñó un framework híbrido en Python. Combinó resolución de problemas cuadráticos complejos con <strong>N-BEATS</strong>, un algoritmo predictivo avanzado basado en deep learning para el pronóstico de series temporales. La arquitectura procesaba eficientemente feeds de datos del mercado.",
     results: "Logré construir carteras con un <strong>ratio Sharpe un 30% superior</strong> a los benchmarks tradicionales en periodos de extrema volatilidad. El desarrollo fue galardonado con una Calificación de Sobresaliente."
   },
+  adyton: {
+    title: "Adyton · MCP Phishing Triage",
+    overline: "Ciberseguridad & IA Agéntica",
+    problem: "Los analistas de un SOC reciben cientos de URLs sospechosas al día. El triaje manual es lento y los enfoques puramente basados en reglas generan demasiados falsos positivos en la 'zona gris', donde una URL no es ni claramente legítima ni claramente maliciosa.",
+    solution: "Diseñé un <strong>servidor MCP (Model Context Protocol)</strong> que expone 7 herramientas tipadas de análisis (sintaxis de URL, RDAP/WHOIS, SSL, reputación multi-fuente, marcadores AiTM y auditoría de headers). El triaje rápido las ejecuta en paralelo en segundos; el triaje profundo lanza un agente <strong>Playwright</strong> en Docker (modo stealth) que inspecciona el DOM en vivo, cadenas de redirección y exfiltración. Cuando el score cae en banda ambigua (30–75), un <strong>Decision Engine</strong> delega en un LLM local (Ollama) que razona como un analista.",
+    results: "El sistema convierte el triaje de phishing en un pipeline <strong>componible e interoperable</strong> con cualquier cliente MCP (Claude Desktop, agentes propios), reduciendo falsos positivos mediante razonamiento LLM sin sacrificar sensibilidad y generando informes estructurados (incl. STIX) listos para el analista."
+  },
   crypto: {
     title: "Plataforma Backtesting Cripto",
     overline: "Ingesta & Data Science",

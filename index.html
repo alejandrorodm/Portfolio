@@ -29,6 +29,7 @@
         <li><a href="#about">Sobre Mí</a></li>
         <li><a href="#experience">Experiencia</a></li>
         <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#certifications">Certificaciones</a></li>
       </ul>
       <div class="nav-resume">
         <a href="#contact" class="btn btn-outline">Contacto</a>
@@ -133,6 +134,7 @@
               <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash"><span>Bash</span></div>
               <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
               <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring"><span>Spring</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" alt="Rust"><span>Rust</span></div>
               
               <!-- Stack duplicado para infinite scroll CSS -->
               <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
@@ -143,14 +145,19 @@
               <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash"><span>Bash</span></div>
               <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
               <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring"><span>Spring</span></div>
+              <div class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" alt="Rust"><span>Rust</span></div>
             </div>
           </div>
           <!-- Etiquetas complementarias -->
           <div class="skill-tags" style="margin-top: 2rem; justify-content: center;">
             <span class="tag">RAG / FAISS</span>
             <span class="tag">LangChain</span>
+            <span class="tag">LangGraph</span>
             <span class="tag">AutoGen</span>
             <span class="tag">Azure OpenAI</span>
+            <span class="tag">Azure Doc Intelligence</span>
+            <span class="tag">Databricks</span>
+            <span class="tag">MCP</span>
             <span class="tag">LMStudio</span>
           </div>
         </div>
@@ -176,16 +183,27 @@
                 <span class="tooltiptext">Automatización mejorada en flujos documentales</span>
               </div>
             </div>
+
+            <h5 class="timeline-project">Automatización Fiscal · Cliente Luxemburgo <span class="timeline-subdate">Abr 2026 – Actualidad</span></h5>
             <ul>
-              <li>Diseño de sistemas RAG con FAISS para el análisis masivo de ofertas técnicas (+100 págs),
-                automatizando flujos de toma de decisiones.</li>
-              <li>Implementación de motores de generación automática de informes mediante IA (Azure OpenAI), mejorando
-                la eficiencia del 90%.</li>
-              <li>Desarrollo de pipelines de OCR (Azure Document Intelligence) y lógica serverless con Azure Functions.
-              </li>
-              <li>Aplicación de Prompt Engineering avanzado: mapas de tokens, contextualización semántica y literal
-                boost.</li>
-              <li>Cobertura de tests 90% (unittest) y monitorización de trazas en Kibana.</li>
+              <li>Desarrollo backend en un macro-proyecto de automatización de cálculos de impuestos sobre estados
+                financieros corporativos: <strong>Trial Balance</strong>, <strong>General Ledger</strong> y
+                <strong>Annual Accounts</strong>.</li>
+              <li>Refinamiento de procesos de cálculo y generación automatizada de informes finales listos para entrega
+                regulatoria, eliminando trabajo manual repetitivo.</li>
+              <li>Contribución en el frontend del sistema y en componentes de IA del pipeline.</li>
+            </ul>
+
+            <h5 class="timeline-project">Análisis Documental con IA Generativa <span class="timeline-subdate">Oct 2025 – Abr 2026</span></h5>
+            <ul>
+              <li>Diseño de sistemas RAG (FAISS + LLMs) para el análisis automático de ofertas técnicas (+100 págs),
+                agilizando la toma de decisiones.</li>
+              <li>Motores de generación automática de informes Word y PPTX con IA (Azure OpenAI), mejorando un 90% los
+                tiempos de entrega.</li>
+              <li>Pipelines de OCR (Azure Document Intelligence) y lógica serverless (Azure Functions, Docker) para la
+                extracción inteligente de datos.</li>
+              <li>Chatbots internos, Prompt Engineering avanzado (mapas de tokens, contextualización semántica),
+                cobertura de tests &gt;90% y monitorización en Kibana.</li>
             </ul>
           </div>
         </div>
@@ -236,6 +254,68 @@
       <h2 class="section-title">Proyectos <span class="text-accent">Destacados</span></h2>
 
       <div class="projects-grid">
+        <!-- Proyecto Adyton -->
+        <article class="project-card glass-panel">
+          <div class="project-image">
+            <img src="/adyton-cover.svg" alt="Adyton MCP Phishing Triage">
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <span class="project-overline">Ciberseguridad & IA Agéntica</span>
+              <h3 class="project-title">Adyton · MCP Phishing Triage</h3>
+            </div>
+            <p class="project-desc">
+              Servidor <strong>MCP (Model Context Protocol)</strong> para el triaje automatizado de URLs de phishing en
+              SOCs. Expone 7 herramientas (sintaxis URL, RDAP, SSL, reputación, AiTM, headers) en triaje rápido y un
+              agente <strong>Playwright</strong> en Docker para análisis profundo del DOM. Un LLM local (Ollama) razona
+              sobre la zona gris para eliminar falsos positivos.
+            </p>
+            <ul class="project-tech">
+              <li>Python</li>
+              <li>MCP</li>
+              <li>Ollama / SLM</li>
+              <li>Playwright</li>
+              <li>Docker</li>
+            </ul>
+            <div class="project-links">
+              <button class="btn btn-primary open-modal-btn" data-project="adyton">Ver Caso de Estudio</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto TicketSaver -->
+        <article class="project-card glass-panel">
+          <div class="project-image">
+            <img src="/ticketsaver-cover.svg" alt="TicketSaver AI Receipt Scanner">
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <span class="project-overline">IA Generativa & OCR</span>
+              <h3 class="project-title">TicketSaver</h3>
+            </div>
+            <p class="project-desc">
+              Asistente de compra que escanea tickets de supermercado con <strong>Google Gemini</strong>: extrae
+              comercio, fecha, total y desglose de productos categorizados. Control de presupuesto, comparador de
+              precios, lista de la compra inteligente e inventario compartido. <strong>PWA</strong> y app Android
+              (Capacitor) con backend en Supabase.
+            </p>
+            <ul class="project-tech">
+              <li>React + TypeScript</li>
+              <li>Gemini API</li>
+              <li>Supabase</li>
+              <li>Vite / PWA</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/alejandrorodm/TicketSaver" target="_blank" class="btn-icon" title="Ver Repositorio">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
         <!-- Proyecto 1 TFG -->
         <article class="project-card glass-panel">
           <div class="project-image">
@@ -429,9 +509,132 @@
             </div>
           </div>
         </article>
+
+        <!-- Proyecto ApexLap -->
+        <article class="project-card glass-panel">
+          <div class="project-image">
+            <img src="/apexlap-cover.svg" alt="ApexLap - Lap times app">
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <span class="project-overline">Full-Stack Móvil & Cloud</span>
+              <h3 class="project-title">ApexLap</h3>
+            </div>
+            <p class="project-desc">
+              App iOS, Android y web para registrar <strong>tiempos de vuelta</strong> de Assetto Corsa, comparar
+              rankings en vivo y récords por coche/circuito. Sincronización <strong>en tiempo real</strong> entre el
+              grupo y subida automática de vueltas desde el juego (mod Lua/CSP y subidor en Python).
+            </p>
+            <ul class="project-tech">
+              <li>React Native</li>
+              <li>Expo</li>
+              <li>Firebase</li>
+              <li>TypeScript</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/alejandrorodm/ApexLap" target="_blank" class="btn-icon" title="Ver Repositorio">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto RolLangChain -->
+        <article class="project-card glass-panel">
+          <div class="project-image">
+            <img src="/rpg-cover.jpeg" alt="RPG con Game Master por IA">
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <span class="project-overline">LLMs Locales & LangChain</span>
+              <h3 class="project-title">RPG con Game Master IA</h3>
+            </div>
+            <p class="project-desc">
+              Juego de rol por turnos con un <strong>Game Master impulsado por IA</strong> que narra y adapta la
+              historia a tus acciones, usando <strong>LangChain</strong> sobre un modelo local. Incluye creación de
+              personajes (razas, clases, habilidades), mecánica d20, combate y guardado en JSON, con gestión eficiente
+              de contexto (32K tokens).
+            </p>
+            <ul class="project-tech">
+              <li>Python</li>
+              <li>LangChain</li>
+              <li>LLM Local</li>
+              <li>Game Design</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/alejandrorodm/RolLangChain" target="_blank" class="btn-icon" title="Ver Repositorio">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
       <div class="projects-footer">
         <a href="https://github.com/alejandrorodm" target="_blank" class="btn btn-outline">Ver todos en GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="certifications section">
+    <div class="container">
+      <h2 class="section-title">Certificaciones <span class="text-accent">&amp; Conferencias</span></h2>
+
+      <!-- Certificación destacada -->
+      <div class="cert-featured glass-panel">
+        <div class="cert-featured-badge">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/databricks/databricks-original.svg" alt="Databricks">
+        </div>
+        <div class="cert-featured-text">
+          <span class="cert-featured-overline">Certificación Destacada · 2026</span>
+          <h3>Databricks Certified Generative AI Engineer Associate</h3>
+          <p>Acreditación oficial en el diseño y despliegue de soluciones de IA Generativa: arquitecturas RAG,
+            evaluación y monitorización de LLMs, y puesta en producción de aplicaciones GenAI.</p>
+        </div>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-category glass-panel">
+          <h3><span class="cert-icon">🤖</span> IA Generativa</h3>
+          <ul class="cert-list">
+            <li>EY Agentic AI <span class="cert-tag">Bronze</span></li>
+            <li>LangGraph <span class="cert-tag">Coursera</span></li>
+            <li>Multi-Agent AutoGen <span class="cert-tag">Coursera</span></li>
+            <li>Generative AI Fundamentals</li>
+          </ul>
+        </div>
+
+        <div class="cert-category glass-panel">
+          <h3><span class="cert-icon">⚙️</span> Sistemas &amp; Dev</h3>
+          <ul class="cert-list">
+            <li>Docker <span class="cert-tag">Coursera</span></li>
+            <li>Ultimate Rust Crash Course</li>
+            <li>Automatización con Python (Word / Excel)</li>
+            <li>Redes Neuronales TensorFlow/Keras <span class="cert-tag">Univ. Almería</span></li>
+          </ul>
+        </div>
+
+        <div class="cert-category glass-panel">
+          <h3><span class="cert-icon">🛡️</span> Ciberseguridad</h3>
+          <ul class="cert-list">
+            <li>Hardening Linux con ZFS <span class="cert-tag">UMA</span></li>
+            <li>Pentesting con Kali <span class="cert-tag">UMA</span></li>
+          </ul>
+        </div>
+
+        <div class="cert-category glass-panel">
+          <h3><span class="cert-icon">🌐</span> Idiomas</h3>
+          <ul class="cert-list">
+            <li>Español <span class="cert-tag">Nativo</span></li>
+            <li>Inglés B2 First <span class="cert-tag">Cambridge</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

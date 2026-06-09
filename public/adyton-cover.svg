@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440" font-family="'Outfit','Segoe UI',sans-serif">
+  <defs>
+    <linearGradient id="ady-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="ady-shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <radialGradient id="ady-glow" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="440" fill="url(#ady-bg)"/>
+  <g stroke="#1e293b" stroke-width="1">
+    <path d="M0 80 H800 M0 160 H800 M0 240 H800 M0 320 H800 M0 400 H800"/>
+    <path d="M80 0 V440 M160 0 V440 M240 0 V440 M560 0 V440 M640 0 V440 M720 0 V440"/>
+  </g>
+  <rect width="800" height="440" fill="url(#ady-glow)"/>
+  <!-- network nodes -->
+  <g stroke="#2563eb" stroke-width="1.5" opacity="0.5">
+    <line x1="120" y1="110" x2="250" y2="200"/>
+    <line x1="680" y1="120" x2="560" y2="220"/>
+    <line x1="150" y1="330" x2="260" y2="250"/>
+    <line x1="660" y1="330" x2="545" y2="255"/>
+  </g>
+  <g fill="#3b82f6">
+    <circle cx="120" cy="110" r="6"/><circle cx="680" cy="120" r="6"/>
+    <circle cx="150" cy="330" r="6"/><circle cx="660" cy="330" r="6"/>
+  </g>
+  <!-- shield -->
+  <g transform="translate(400 210)">
+    <path d="M0 -120 L100 -85 V20 C100 90 55 130 0 155 C-55 130 -100 90 -100 20 V-85 Z"
+          fill="url(#ady-shield)" opacity="0.18" stroke="url(#ady-shield)" stroke-width="2.5"/>
+    <!-- keyhole / lock -->
+    <circle cx="0" cy="-5" r="26" fill="none" stroke="#93c5fd" stroke-width="6"/>
+    <rect x="-7" y="10" width="14" height="34" rx="6" fill="#93c5fd"/>
+    <!-- scan check -->
+    <path d="M-34 60 L-10 84 L40 30" fill="none" stroke="#27c93f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="400" y="408" text-anchor="middle" fill="#f8fafc" font-size="34" font-weight="800" letter-spacing="2">ADYTON</text>
+  <text x="400" y="46" text-anchor="middle" fill="#60a5fa" font-size="15" font-weight="600" letter-spacing="3">MCP · PHISHING TRIAGE</text>
+</svg>
