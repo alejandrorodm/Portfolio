@@ -134,3 +134,79 @@ document.addEventListener('keydown', (e) => {
     closeModal();
   }
 });
+
+// Galerías de capturas
+const galleryData = {
+  apexlap: {
+    title: "ApexLap",
+    overline: "Capturas de la app",
+    shots: [
+      { src: "/apexlap/02-tiempos.png", alt: "Ranking de tiempos por circuito" },
+      { src: "/apexlap/03-records.png", alt: "Récords y piques activos" },
+      { src: "/apexlap/04-ruleta.png", alt: "Ruleta de piques: coche y circuito al azar" },
+      { src: "/apexlap/05-liga.png", alt: "Liga compartida del grupo" },
+      { src: "/apexlap/06-perfil.png", alt: "Perfil y progreso de tiempos" },
+      { src: "/apexlap/01-login.png", alt: "Pantalla de inicio de sesión" }
+    ]
+  }
+};
+
+const galleryModal = document.getElementById('gallery-modal');
+const galleryGrid = document.getElementById('gallery-grid');
+const galleryCloseBtn = document.getElementById('gallery-close');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCloseBtn = document.getElementById('lightbox-close');
+
+document.querySelectorAll('.open-gallery-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const data = galleryData[btn.getAttribute('data-gallery')];
+    if (!data || !galleryGrid) return;
+    document.getElementById('gallery-title').textContent = data.title;
+    document.getElementById('gallery-overline').textContent = data.overline;
+    galleryGrid.innerHTML = data.shots.map(s =>
+      `<figure class="gallery-item"><img src="${s.src}" alt="${s.alt}" loading="lazy"><figcaption>${s.alt}</figcaption></figure>`
+    ).join('');
+    galleryModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+const closeGallery = () => {
+  if (galleryModal) {
+    galleryModal.classList.add('hidden');
+    if (lightbox && lightbox.classList.contains('hidden')) document.body.style.overflow = '';
+  }
+};
+
+if (galleryCloseBtn) galleryCloseBtn.addEventListener('click', closeGallery);
+if (galleryModal) galleryModal.addEventListener('click', (e) => {
+  if (e.target === galleryModal) closeGallery();
+});
+
+// Lightbox (ampliar captura)
+if (galleryGrid) galleryGrid.addEventListener('click', (e) => {
+  const img = e.target.closest('.gallery-item img');
+  if (!img || !lightbox) return;
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightbox.classList.remove('hidden');
+});
+
+const closeLightbox = () => {
+  if (lightbox) {
+    lightbox.classList.add('hidden');
+    if (galleryModal && galleryModal.classList.contains('hidden')) document.body.style.overflow = '';
+  }
+};
+
+if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+if (lightbox) lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  if (lightbox && !lightbox.classList.contains('hidden')) { closeLightbox(); return; }
+  if (galleryModal && !galleryModal.classList.contains('hidden')) closeGallery();
+});

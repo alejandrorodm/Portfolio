@@ -532,6 +532,7 @@
               <li>TypeScript</li>
             </ul>
             <div class="project-links">
+              <button class="btn btn-primary open-gallery-btn" data-gallery="apexlap">Ver capturas</button>
               <a href="https://github.com/alejandrorodm/ApexLap" target="_blank" class="btn-icon" title="Ver Repositorio">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                   <path
@@ -589,7 +590,7 @@
       <!-- Certificación destacada -->
       <div class="cert-featured glass-panel">
         <div class="cert-featured-badge">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/databricks/databricks-original.svg" alt="Databricks">
+          <img src="/databricks.svg" alt="Databricks" width="56" height="56">
         </div>
         <div class="cert-featured-text">
           <span class="cert-featured-overline">Certificación Destacada · 2026</span>
@@ -694,6 +695,26 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Galería de Capturas -->
+  <div id="gallery-modal" class="modal-overlay hidden">
+    <div class="modal-container glass-panel gallery-container">
+      <div class="modal-header">
+        <div class="modal-overline" id="gallery-overline">Capturas</div>
+        <h2 id="gallery-title">Galería</h2>
+        <button class="modal-close" id="gallery-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden">
+    <button class="modal-close lightbox-close" id="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="Captura ampliada">
   </div>
 
   <!-- Footer -->
