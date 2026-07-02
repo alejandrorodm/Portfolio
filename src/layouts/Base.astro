@@ -1,0 +1,97 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/global.css';
+import { localePath, useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const canonical = new URL(localePath(locale), Astro.site);
+const alternateEs = new URL(localePath('es'), Astro.site);
+const alternateEn = new URL(localePath('en'), Astro.site);
+const ogImage = new URL('/avatar.jpeg', Astro.site);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Alejandro Rodríguez Moreno',
+  url: Astro.site?.toString(),
+  image: ogImage.toString(),
+  jobTitle: locale === 'es' ? 'Ingeniero de Datos e IA' : 'Data & AI Engineer',
+  worksFor: { '@type': 'Organization', name: 'EY' },
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad de Málaga' },
+  sameAs: [
+    'https://github.com/alejandrorodm',
+    'https://www.linkedin.com/in/alejandrorodmoreno/',
+  ],
+  knowsAbout: [
+    'Generative AI',
+    'Retrieval-Augmented Generation',
+    'Machine Learning',
+    'Azure',
+    'Python',
+  ],
+};
+---
+
+<!doctype html>
+<html lang={locale} class="scheme-light dark:scheme-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t('meta.title')}</title>
+    <meta name="description" content={t('meta.description')} />
+    <meta name="author" content="Alejandro Rodríguez Moreno" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es" href={alternateEs} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateEs} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={t('meta.title')} />
+    <meta property="og:description" content={t('meta.description')} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={locale === 'es' ? 'es_ES' : 'en_US'} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={t('meta.title')} />
+    <meta name="twitter:description" content={t('meta.description')} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Tema: se ejecuta antes del primer paint para evitar flash -->
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      const stored = localStorage.getItem('theme');
+      const dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', dark);
+    </script>
+  </head>
+  <body class="bg-white font-sans text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-300">
+    <slot />
+
+    <script>
+      // Reveal on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+      document.querySelectorAll('.js-reveal').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

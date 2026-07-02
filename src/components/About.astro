@@ -1,0 +1,59 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { coreStack, skillGroups } from '../data/skills';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const bio = {
+  es: [
+    'Soy ingeniero de datos e IA en EY, donde diseño y despliego soluciones de IA Generativa y arquitecturas cloud: sistemas RAG optimizados con FAISS, pipelines de OCR serverless y motores de generación automática de informes que ya están en producción.',
+    'Me interesa la parte del trabajo donde la IA deja de ser una demo y se convierte en un sistema fiable: tests, monitorización, coste por inferencia y arquitectura. Fuera del trabajo construyo proyectos propios — desde herramientas de ciberseguridad con agentes hasta apps móviles — y doy mentoría de algoritmos y programación.',
+  ],
+  en: [
+    'I’m a Data & AI engineer at EY, where I design and deploy Generative AI solutions and cloud architectures: FAISS-optimized RAG systems, serverless OCR pipelines and automated report generation engines that are already running in production.',
+    'I care about the part of the job where AI stops being a demo and becomes a reliable system: tests, monitoring, cost per inference and architecture. Outside work I build my own projects — from agentic cybersecurity tools to mobile apps — and mentor students in algorithms and programming.',
+  ],
+}[locale];
+---
+
+<section id="about" class="mx-auto max-w-5xl scroll-mt-20 px-6 py-20 sm:py-24">
+  <SectionHeader overline="03" title={t('about.title')} />
+
+  <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1fr]">
+    <div class="js-reveal space-y-4 leading-relaxed text-pretty text-zinc-600 dark:text-zinc-400">
+      {bio.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+
+    <div class="js-reveal">
+      <h3 class="mb-3 font-mono text-xs tracking-widest text-zinc-500 uppercase">
+        {t('about.stack')}
+      </h3>
+      <ul class="flex flex-wrap gap-2">
+        {
+          coreStack.map((tech) => (
+            <li class="rounded-md border border-zinc-200 px-2.5 py-1 font-mono text-xs font-medium text-zinc-700 dark:border-zinc-800 dark:text-zinc-300">
+              {tech}
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-8 space-y-5">
+        {
+          skillGroups.map((group) => (
+            <div>
+              <h4 class="mb-2 text-sm font-medium text-zinc-900 dark:text-zinc-100">{group.label[locale]}</h4>
+              <p class="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">{group.items.join(' · ')}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

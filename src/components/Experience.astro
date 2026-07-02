@@ -1,0 +1,70 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { experience } from '../data/experience';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section id="experience" class="mx-auto max-w-5xl scroll-mt-20 px-6 py-20 sm:py-24">
+  <SectionHeader overline="02" title={t('exp.title')} />
+
+  <ol class="space-y-12">
+    {
+      experience.map((job) => (
+        <li class="js-reveal grid grid-cols-1 gap-4 sm:grid-cols-[180px_1fr] sm:gap-8">
+          <p class="pt-0.5 font-mono text-sm text-zinc-500">{job.period[locale]}</p>
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+              <div>
+                <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-50">{job.role[locale]}</h3>
+                <p class="mt-0.5 text-sm text-zinc-600 dark:text-zinc-400">{job.company}</p>
+              </div>
+              {job.metric && (
+                <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                  <span class="font-mono text-xl font-semibold text-accent-600 dark:text-accent-400">
+                    {job.metric.value}
+                  </span>{' '}
+                  {job.metric.label[locale]}
+                </p>
+              )}
+            </div>
+
+            {job.bullets && (
+              <ul class="mt-4 space-y-2">
+                {job.bullets.map((bullet) => (
+                  <li class="flex gap-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    <span class="mt-2 size-1 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" aria-hidden="true" />
+                    {bullet[locale]}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {job.projects?.map((project) => (
+              <div class="mt-5 border-l-2 border-zinc-200 pl-4 dark:border-zinc-800">
+                <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  {project.name[locale]}
+                  <span class="ml-2 font-mono text-xs font-normal text-zinc-500">{project.period[locale]}</span>
+                </p>
+                <ul class="mt-2 space-y-2">
+                  {project.bullets.map((bullet) => (
+                    <li class="flex gap-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                      <span class="mt-2 size-1 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" aria-hidden="true" />
+                      {bullet[locale]}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>
