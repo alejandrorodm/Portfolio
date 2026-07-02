@@ -15,7 +15,7 @@ const featured = projects.filter((p) => p.featured);
 const rest = projects.filter((p) => !p.featured);
 ---
 
-<section id="work" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20 sm:py-24">
+<section id="work" class="mx-auto max-w-7xl scroll-mt-20 px-6 py-20 sm:py-24">
   <SectionHeader overline="01" title={t('work.title')} sub={t('work.sub')} />
 
   <div
@@ -24,7 +24,7 @@ const rest = projects.filter((p) => !p.featured);
     {featured.map((project) => <ProjectCard project={project} locale={locale} />)}
   </div>
 
-  <h3 class="js-reveal mt-14 mb-6 font-mono text-xs tracking-widest text-zinc-500 uppercase">
+  <h3 class="js-reveal mt-14 mb-6 font-mono text-xs tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
     {t('work.more')}
   </h3>
   <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

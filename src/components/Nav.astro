@@ -21,7 +21,7 @@ const links = [
   class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-white/80 backdrop-blur-md transition-colors dark:bg-zinc-950/80"
   id="site-header"
 >
-  <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6" aria-label="Main">
+  <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6" aria-label="Main">
     <a
       href={localePath(locale)}
       class="font-mono text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100"
@@ -36,7 +36,7 @@ const links = [
             <li>
               <a
                 href={link.href}
-                class="rounded-md px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
+                class="rounded-md px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
               >
                 {link.label}
               </a>
@@ -47,7 +47,7 @@ const links = [
 
       <a
         href={localePath(otherLocale)}
-        class="rounded-md px-3 py-2 font-mono text-xs font-medium text-zinc-500 uppercase transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
+        class="rounded-md px-3 py-2 font-mono text-xs font-medium text-zinc-500 uppercase transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
         aria-label={t('lang.switch')}
       >
         {otherLocale}
@@ -59,7 +59,7 @@ const links = [
         aria-label="Menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        class="rounded-md p-2 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 sm:hidden dark:text-zinc-500 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
+        class="rounded-md p-2 text-zinc-500 transition-colors dark:text-zinc-400 hover:bg-zinc-100 hover:text-zinc-900 sm:hidden dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
       >
         <svg class="size-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M4 7h16M4 12h16M4 17h16"></path>
@@ -70,7 +70,7 @@ const links = [
         id="theme-toggle"
         type="button"
         aria-label={t('theme.toggle')}
-        class="rounded-md p-2 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
+        class="rounded-md p-2 text-zinc-500 transition-colors dark:text-zinc-400 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
       >
         <svg class="size-4.5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <circle cx="12" cy="12" r="4"></circle>
@@ -84,13 +84,13 @@ const links = [
   </nav>
 
   <div id="mobile-menu" class="hidden border-t border-zinc-200 bg-white sm:hidden dark:border-zinc-800 dark:bg-zinc-950">
-    <ul class="mx-auto max-w-6xl space-y-1 px-6 py-4">
+    <ul class="mx-auto max-w-7xl space-y-1 px-6 py-4">
       {
         links.map((link) => (
           <li>
             <a
               href={link.href}
-              class="block rounded-md px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
+              class="block rounded-md px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-zinc-100"
               data-mobile-link
             >
               {link.label}

@@ -22,34 +22,42 @@ const bio = {
 }[locale];
 ---
 
-<section id="about" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20 sm:py-24">
+<section id="about" class="mx-auto max-w-7xl scroll-mt-20 px-6 py-20 sm:py-24">
   <SectionHeader overline="03" title={t('about.title')} />
 
   <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1fr]">
-    <div class="js-reveal space-y-5 text-base leading-relaxed text-pretty text-zinc-600 sm:text-lg dark:text-zinc-400">
+    <div class="js-reveal space-y-5 text-base leading-relaxed text-pretty text-zinc-600 sm:text-lg dark:text-zinc-300">
       {bio.map((paragraph) => <p>{paragraph}</p>)}
     </div>
 
     <div class="js-reveal">
-      <h3 class="mb-3 font-mono text-xs tracking-widest text-zinc-500 uppercase">
+      <h3 class="mb-3 font-mono text-xs tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
         {t('about.stack')}
       </h3>
       <ul class="flex flex-wrap gap-2">
         {
           coreStack.map((tech) => (
-            <li class="rounded-md border border-zinc-200 px-3 py-1.5 font-mono text-sm font-medium text-zinc-700 dark:border-zinc-800 dark:text-zinc-300">
+            <li class="rounded-lg border border-accent-600/30 bg-accent-50/60 px-3.5 py-2 font-mono text-sm font-semibold text-zinc-800 dark:border-accent-400/25 dark:bg-accent-950/30 dark:text-zinc-100">
               {tech}
             </li>
           ))
         }
       </ul>
 
-      <div class="mt-8 space-y-5">
+      <div class="mt-9 space-y-7">
         {
           skillGroups.map((group) => (
             <div>
-              <h4 class="mb-2 text-base font-medium text-zinc-900 dark:text-zinc-100">{group.label[locale]}</h4>
-              <p class="text-base leading-relaxed text-zinc-500 dark:text-zinc-400">{group.items.join(' · ')}</p>
+              <h4 class="mb-3 font-mono text-xs tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+                {group.label[locale]}
+              </h4>
+              <ul class="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li class="rounded-md bg-zinc-100 px-2.5 py-1.5 text-sm font-medium text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-200">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))
         }
