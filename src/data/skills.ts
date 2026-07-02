@@ -55,6 +55,7 @@ export const skillGroups: SkillGroup[] = [
       { name: 'Azure Document Intelligence', icon: '/icons/azure.svg' },
       { name: 'Azure Blob Storage', icon: '/icons/azure.svg' },
       { name: 'Databricks', icon: '/databricks.svg' },
+      { name: 'AWS', icon: '/icons/aws.svg' },
       { name: 'CI/CD · GitHub Actions', icon: '/icons/githubactions.svg' },
       { name: 'Kibana', icon: '/icons/kibana.svg', invert: true },
       { name: 'Linux / Bash', icon: '/icons/bash.svg', invert: true },
