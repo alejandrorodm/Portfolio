@@ -63,6 +63,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: { es: 'Lenguajes y otros', en: 'Languages & more' },
     items: [
+      { name: 'TypeScript', icon: '/icons/typescript.svg' },
       { name: 'Java', icon: '/icons/java.svg' },
       { name: 'C++', icon: '/icons/cplusplus.svg' },
       { name: 'Rust', icon: '/icons/rust.svg', invert: true },
