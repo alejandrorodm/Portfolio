@@ -37,8 +37,18 @@ const bio = {
       <ul class="flex flex-wrap gap-2">
         {
           coreStack.map((tech) => (
-            <li class="rounded-lg border border-accent-600/30 bg-accent-50/60 px-3.5 py-2 font-mono text-sm font-semibold text-zinc-800 dark:border-accent-400/25 dark:bg-accent-950/30 dark:text-zinc-100">
-              {tech}
+            <li class="flex items-center gap-2 rounded-lg border border-accent-600/30 bg-accent-50/60 px-3.5 py-2 font-mono text-sm font-semibold text-zinc-800 dark:border-accent-400/25 dark:bg-accent-950/30 dark:text-zinc-100">
+              {tech.icon && (
+                <img
+                  src={tech.icon}
+                  alt=""
+                  width="18"
+                  height="18"
+                  loading="lazy"
+                  class:list={['size-4.5', tech.invert && 'dark:invert']}
+                />
+              )}
+              {tech.name}
             </li>
           ))
         }
@@ -53,8 +63,18 @@ const bio = {
               </h4>
               <ul class="flex flex-wrap gap-2">
                 {group.items.map((item) => (
-                  <li class="rounded-md bg-zinc-100 px-2.5 py-1.5 text-sm font-medium text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-200">
-                    {item}
+                  <li class="flex items-center gap-1.5 rounded-md bg-zinc-100 px-2.5 py-1.5 text-sm font-medium text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-200">
+                    {item.icon && (
+                      <img
+                        src={item.icon}
+                        alt=""
+                        width="16"
+                        height="16"
+                        loading="lazy"
+                        class:list={['size-4', item.invert && 'dark:invert']}
+                      />
+                    )}
+                    {item.name}
                   </li>
                 ))}
               </ul>

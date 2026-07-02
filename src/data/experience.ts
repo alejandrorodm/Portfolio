@@ -36,16 +36,20 @@ export const experience: Experience[] = [
         period: { es: 'Abr 2026 — Actualidad', en: 'Apr 2026 — Present' },
         bullets: [
           {
-            es: 'Backend de un macro-proyecto de automatización de cálculos de impuestos sobre estados financieros corporativos: Trial Balance, General Ledger y Annual Accounts.',
-            en: 'Backend of a large-scale project automating tax computations over corporate financial statements: Trial Balance, General Ledger and Annual Accounts.',
+            es: 'Backend y arquitectura orientada a servicios con Python 3.13 y FastAPI para la automatización de flujos fiscales e ingesta de estados financieros corporativos: Trial Balance, General Ledger y Annual Accounts.',
+            en: 'Backend and service-oriented architecture with Python 3.13 and FastAPI to automate tax workflows and ingest corporate financial statements: Trial Balance, General Ledger and Annual Accounts.',
+          },
+          {
+            es: 'Workers asíncronos con persistencia en MongoDB para el registro, trazabilidad y monitorización de ejecuciones; colas de mensajería (Redis / Azure Service Bus) y almacenamiento a gran escala en Azure Blob Storage.',
+            en: 'Asynchronous workers with MongoDB persistence for run logging, traceability and monitoring; message queues (Redis / Azure Service Bus) and large-scale storage on Azure Blob Storage.',
           },
           {
             es: 'Generación automatizada de informes finales listos para entrega regulatoria, eliminando trabajo manual repetitivo.',
             en: 'Automated generation of final reports ready for regulatory filing, removing repetitive manual work.',
           },
           {
-            es: 'Contribución al frontend del sistema y a los componentes de IA del pipeline.',
-            en: 'Contributions to the system frontend and the AI components of the pipeline.',
+            es: 'Contribución al frontend del sistema con Angular y TypeScript para la interacción con los componentes y pipelines de IA.',
+            en: 'Contributions to the system frontend with Angular and TypeScript for interacting with the AI components and pipelines.',
           },
         ],
       },
@@ -69,8 +73,8 @@ export const experience: Experience[] = [
             en: 'OCR pipelines (Azure Document Intelligence) and serverless logic (Azure Functions, Docker) for intelligent data extraction.',
           },
           {
-            es: 'Chatbots internos, prompt engineering avanzado (mapas de tokens, contextualización semántica), cobertura de tests >90% y monitorización en Kibana.',
-            en: 'Internal chatbots, advanced prompt engineering (token maps, semantic contextualization), >90% test coverage and monitoring in Kibana.',
+            es: 'Chatbots internos y prompt engineering avanzado (contextualización semántica, boosts ponderados por campo en JSON para optimizar el retrieval con LLMs coste-eficientes), cobertura de tests >90% y monitorización en Kibana.',
+            en: 'Internal chatbots and advanced prompt engineering (semantic contextualization, per-field weighted boosts in JSON to optimize retrieval with cost-efficient LLMs), >90% test coverage and monitoring in Kibana.',
           },
         ],
       },
@@ -89,8 +93,8 @@ export const experience: Experience[] = [
     },
     bullets: [
       {
-        es: 'Sistema RAG para la generación de casos de prueba industriales, servido mediante APIs REST en Flask.',
-        en: 'RAG system for generating industrial test cases, served through REST APIs in Flask.',
+        es: 'Sistema RAG para la generación de casos de prueba industriales, servido mediante APIs REST en Flask con persistencia y consultas en SQL (SQLite).',
+        en: 'RAG system for generating industrial test cases, served through REST APIs in Flask with SQL persistence and querying (SQLite).',
       },
       {
         es: 'Optimización de contexto y recursos: −75% de gasto y −25% en tiempos de respuesta del LLM (Mistral).',

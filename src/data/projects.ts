@@ -49,6 +49,17 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 'vipertrade',
+    title: 'ViperTrade',
+    overline: { es: 'Fintech · Trading algorítmico', en: 'Fintech · Algo trading' },
+    description: {
+      es: 'Plataforma de gestión de portafolio y trading automático: backend en Python 3.12 (FastAPI), app móvil/web con React Native (Expo) y motor cuantitativo con Pandas y NumPy (RSI, MACD, Fibonacci, Order Blocks) con backtesting multihilo. Automatización DCA sobre Bitget (CCXT) y Pionex con guardarraíles de riesgo, claves cifradas (Fernet) en PostgreSQL (Supabase) y bot de Telegram con confirmación de órdenes en 1 clic y análisis contextual con Gemini.',
+      en: 'Portfolio management and automated trading platform: Python 3.12 backend (FastAPI), mobile/web app with React Native (Expo) and a quantitative engine built on Pandas and NumPy (RSI, MACD, Fibonacci, Order Blocks) with multithreaded backtesting. DCA automation on Bitget (CCXT) and Pionex with strict risk guardrails, Fernet-encrypted keys in PostgreSQL (Supabase) and a Telegram bot with 1-click order confirmation and contextual analysis via Gemini.',
+    },
+    tech: ['Python', 'FastAPI', 'React Native', 'Pandas · NumPy', 'Supabase', 'Gemini'],
+    featured: true,
+  },
+  {
     id: 'ticketsaver',
     title: 'TicketSaver',
     overline: { es: 'IA Generativa · OCR', en: 'Generative AI · OCR' },
@@ -87,8 +98,8 @@ export const projects: Project[] = [
     title: { es: 'Optimización de Carteras', en: 'Portfolio Optimization' },
     overline: { es: 'Machine Learning · Finanzas', en: 'Machine Learning · Finance' },
     description: {
-      es: 'Software de optimización de carteras en entornos altamente volátiles como criptomonedas. Combina resolución de problemas cuadráticos con modelos predictivos N-BEATS para maximizar rentabilidad. Trabajo de Fin de Grado con calificación de Sobresaliente.',
-      en: 'Portfolio optimization software for highly volatile environments such as crypto. Combines quadratic programming with N-BEATS predictive models to maximize returns. Bachelor’s thesis awarded top honors.',
+      es: 'Software de optimización de carteras en entornos altamente volátiles como criptomonedas. Combina resolución de problemas cuadráticos con modelos predictivos N-BEATS para maximizar rentabilidad. Trabajo de Fin de Grado con calificación de Sobresaliente (9.6).',
+      en: 'Portfolio optimization software for highly volatile environments such as crypto. Combines quadratic programming with N-BEATS predictive models to maximize returns. Bachelor’s thesis graded 9.6/10 with honors.',
     },
     tech: ['Python', 'N-BEATS', 'Quant Finance'],
     featured: false,
@@ -102,8 +113,8 @@ export const projects: Project[] = [
         en: 'I designed a hybrid Python framework combining quadratic programming with N-BEATS, a deep learning model for time-series forecasting, efficiently processing market data feeds.',
       },
       results: {
-        es: 'Carteras con un ratio Sharpe un 30% superior a los benchmarks tradicionales en periodos de extrema volatilidad. Calificación de Sobresaliente.',
-        en: 'Portfolios with a Sharpe ratio 30% above traditional benchmarks during periods of extreme volatility. Awarded top honors.',
+        es: 'Carteras con un ratio Sharpe un 30% superior a los benchmarks tradicionales en periodos de extrema volatilidad. Calificación de Sobresaliente (9.6).',
+        en: 'Portfolios with a Sharpe ratio 30% above traditional benchmarks during periods of extreme volatility. Graded 9.6/10 with honors.',
       },
     },
   },
@@ -119,31 +130,6 @@ export const projects: Project[] = [
     featured: false,
     pypi: 'https://pypi.org/project/pionex_py/',
     repo: 'https://github.com/alejandrorodm',
-  },
-  {
-    id: 'crypto',
-    title: { es: 'Backtesting Cripto', en: 'Crypto Backtesting' },
-    overline: { es: 'Data engineering · Trading', en: 'Data engineering · Trading' },
-    description: {
-      es: 'Motor multihilo de ingesta masiva de datos para APIs externas, con indicadores matemáticos (EMA, RSI, Bollinger), señales generadas con Random Forest y reportes de rentabilidad automatizados.',
-      en: 'Multithreaded bulk data ingestion engine for external APIs, with mathematical indicators (EMA, RSI, Bollinger), Random Forest signal generation and automated profitability reports.',
-    },
-    tech: ['Python', 'Pandas', 'Random Forest'],
-    featured: false,
-    caseStudy: {
-      problem: {
-        es: 'El backtesting de estrategias complejas exige procesar millones de velas históricas sin cuellos de botella ni fugas de memoria durante la ingesta.',
-        en: 'Backtesting complex strategies requires processing millions of historical candlesticks without bottlenecks or memory leaks during ingestion.',
-      },
-      solution: {
-        es: 'Desarrollé un motor multihilo en Python con indicadores matemáticos (RSI, Bollinger) y un predictor Random Forest para la generación dinámica de señales, más un generador de reportes visuales automatizado.',
-        en: 'I built a multithreaded Python engine with mathematical indicators (RSI, Bollinger) and a Random Forest predictor for dynamic signal generation, plus an automated visual reporting module.',
-      },
-      results: {
-        es: 'Más de 5 años de datos históricos procesados en menos de 2 minutos. Las estrategias basadas en ML superaron empíricamente al Buy & Hold en mercados bajistas.',
-        en: 'Over 5 years of historical data processed in under 2 minutes. ML-based strategies empirically beat Buy & Hold in bear markets.',
-      },
-    },
   },
   {
     id: 'vodafone',

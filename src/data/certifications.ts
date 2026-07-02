@@ -2,7 +2,7 @@ import type { Localized } from '../i18n/ui';
 
 export interface CertCategory {
   label: Localized;
-  items: { name: string; tag?: string }[];
+  items: { name: string; tag?: string | Localized }[];
 }
 
 export const featuredCert = {
@@ -23,6 +23,13 @@ export const certCategories: CertCategory[] = [
       { name: 'LangGraph', tag: 'Coursera' },
       { name: 'Multi-Agent AutoGen', tag: 'Coursera' },
       { name: 'Generative AI Fundamentals' },
+    ],
+  },
+  {
+    label: { es: 'Big Data y Cloud', en: 'Big Data & Cloud' },
+    items: [
+      { name: 'Introduction to Big Data with Spark & Hadoop', tag: 'IBM' },
+      { name: 'AWS Cloud Technical Essentials', tag: { es: 'En curso', en: 'In progress' } },
     ],
   },
   {
