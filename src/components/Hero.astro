@@ -15,19 +15,19 @@ const metrics = [
 ];
 ---
 
-<section class="mx-auto max-w-5xl px-6 pt-36 pb-20 sm:pt-44 sm:pb-28">
+<section class="mx-auto max-w-6xl px-6 pt-36 pb-20 sm:pt-44 sm:pb-28">
   <div class="flex flex-col-reverse items-start gap-10 sm:flex-row sm:items-center sm:justify-between">
     <div class="max-w-2xl">
-      <p class="mb-4 font-mono text-sm text-accent-600 dark:text-accent-400">
+      <p class="mb-4 font-mono text-sm text-accent-600 sm:text-base dark:text-accent-400">
         {t('hero.role')}
       </p>
-      <h1 class="text-4xl font-semibold tracking-tight text-balance text-zinc-900 sm:text-5xl dark:text-zinc-50">
+      <h1 class="text-4xl font-semibold tracking-tight text-balance text-zinc-900 sm:text-6xl dark:text-zinc-50">
         Alejandro Rodríguez
       </h1>
-      <p class="mt-5 text-xl leading-snug font-medium text-balance text-zinc-700 sm:text-2xl dark:text-zinc-200">
+      <p class="mt-5 text-xl leading-snug font-medium text-balance text-zinc-700 sm:text-3xl dark:text-zinc-200">
         {t('hero.headline')}
       </p>
-      <p class="mt-4 max-w-xl leading-relaxed text-pretty text-zinc-600 dark:text-zinc-400">
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-pretty text-zinc-600 sm:text-lg dark:text-zinc-400">
         {t('hero.sub')}
       </p>
 
@@ -80,7 +80,7 @@ const metrics = [
       alt="Alejandro Rodríguez Moreno"
       width="144"
       height="144"
-      class="size-28 rounded-2xl object-cover ring-1 ring-zinc-200 sm:size-36 dark:ring-zinc-800"
+      class="size-28 rounded-2xl object-cover ring-1 ring-zinc-200 sm:size-44 dark:ring-zinc-800"
       loading="eager"
     />
   </div>
@@ -88,9 +88,11 @@ const metrics = [
   <dl class="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-zinc-200 bg-zinc-200 sm:grid-cols-3 dark:border-zinc-800 dark:bg-zinc-800">
     {
       metrics.map((m) => (
-        <div class="bg-white px-6 py-5 dark:bg-zinc-950">
-          <dd class="font-mono text-2xl font-semibold text-zinc-900 dark:text-zinc-50">{m.value}</dd>
-          <dt class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{m.label}</dt>
+        <div class="bg-white px-6 py-6 dark:bg-zinc-950">
+          <dd class="font-mono text-3xl font-semibold text-accent-600 sm:text-4xl dark:text-accent-400">
+            {m.value}
+          </dd>
+          <dt class="mt-1.5 text-sm text-zinc-600 sm:text-base dark:text-zinc-400">{m.label}</dt>
         </div>
       ))
     }

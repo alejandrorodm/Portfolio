@@ -20,7 +20,7 @@ const title = typeof project.title === 'string' ? project.title : project.title[
       <p class="font-mono text-xs tracking-wide text-accent-600 uppercase dark:text-accent-400">
         {project.overline[locale]}
       </p>
-      <h3 class="mt-1.5 text-lg font-semibold text-zinc-900 dark:text-zinc-50">{title}</h3>
+      <h3 class="mt-1.5 text-xl font-semibold text-zinc-900 dark:text-zinc-50">{title}</h3>
     </div>
     <div class="flex shrink-0 items-center gap-1">
       {
@@ -54,7 +54,7 @@ const title = typeof project.title === 'string' ? project.title : project.title[
     </div>
   </div>
 
-  <p class="mt-3 flex-1 text-sm leading-relaxed text-pretty text-zinc-600 dark:text-zinc-400">
+  <p class="mt-3 flex-1 text-base leading-relaxed text-pretty text-zinc-600 dark:text-zinc-400">
     {project.description[locale]}
   </p>
 
@@ -71,7 +71,7 @@ const title = typeof project.title === 'string' ? project.title : project.title[
           <span class="inline-block transition-transform group-open/details:rotate-90">▸</span>
           {t('work.caseStudy')}
         </summary>
-        <div class="mt-4 space-y-4 border-l-2 border-zinc-200 pl-4 text-sm leading-relaxed text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
+        <div class="mt-4 space-y-4 border-l-2 border-accent-500/40 pl-4 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           <div>
             <p class="mb-1 font-medium text-zinc-900 dark:text-zinc-100">{t('work.problem')}</p>
             <p>{project.caseStudy.problem[locale]}</p>

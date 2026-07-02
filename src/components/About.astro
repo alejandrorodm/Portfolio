@@ -22,11 +22,11 @@ const bio = {
 }[locale];
 ---
 
-<section id="about" class="mx-auto max-w-5xl scroll-mt-20 px-6 py-20 sm:py-24">
+<section id="about" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20 sm:py-24">
   <SectionHeader overline="03" title={t('about.title')} />
 
   <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1fr]">
-    <div class="js-reveal space-y-4 leading-relaxed text-pretty text-zinc-600 dark:text-zinc-400">
+    <div class="js-reveal space-y-5 text-base leading-relaxed text-pretty text-zinc-600 sm:text-lg dark:text-zinc-400">
       {bio.map((paragraph) => <p>{paragraph}</p>)}
     </div>
 
@@ -37,7 +37,7 @@ const bio = {
       <ul class="flex flex-wrap gap-2">
         {
           coreStack.map((tech) => (
-            <li class="rounded-md border border-zinc-200 px-2.5 py-1 font-mono text-xs font-medium text-zinc-700 dark:border-zinc-800 dark:text-zinc-300">
+            <li class="rounded-md border border-zinc-200 px-3 py-1.5 font-mono text-sm font-medium text-zinc-700 dark:border-zinc-800 dark:text-zinc-300">
               {tech}
             </li>
           ))
@@ -48,8 +48,8 @@ const bio = {
         {
           skillGroups.map((group) => (
             <div>
-              <h4 class="mb-2 text-sm font-medium text-zinc-900 dark:text-zinc-100">{group.label[locale]}</h4>
-              <p class="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">{group.items.join(' · ')}</p>
+              <h4 class="mb-2 text-base font-medium text-zinc-900 dark:text-zinc-100">{group.label[locale]}</h4>
+              <p class="text-base leading-relaxed text-zinc-500 dark:text-zinc-400">{group.items.join(' · ')}</p>
             </div>
           ))
         }
