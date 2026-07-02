@@ -1,6 +1,6 @@
 ---
 import SectionHeader from './SectionHeader.astro';
-import { certCategories, featuredCert, languages } from '../data/certifications';
+import { certCategories, featuredCert } from '../data/certifications';
 import { useTranslations, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -11,41 +11,55 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<section id="certifications" class="mx-auto max-w-7xl scroll-mt-20 px-6 py-20 sm:py-24">
-  <SectionHeader overline="04" title={t('certs.title')} />
+<section id="certifications" class="scroll-mt-24">
+  <SectionHeader title={t('certs.title')}>
+    <svg
+      slot="icon"
+      class="size-4.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <circle cx="12" cy="9" r="6"></circle>
+      <path d="m8.5 14-2 7 5.5-3 5.5 3-2-7"></path>
+    </svg>
+  </SectionHeader>
 
   <div
-    class="js-reveal relative overflow-hidden rounded-xl border border-accent-600/25 bg-gradient-to-br from-accent-50 to-white p-6 sm:p-10 dark:border-accent-400/20 dark:from-accent-950/40 dark:to-zinc-950"
+    class="card js-reveal relative overflow-hidden border-accent-200 bg-gradient-to-br from-accent-50 to-white p-6 sm:p-8"
   >
-    <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10">
-      <img src={featuredCert.logo} alt="Databricks" width="80" height="80" class="size-16 shrink-0 sm:size-20" loading="lazy" />
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+      <img src={featuredCert.logo} alt="Databricks" width="80" height="80" class="size-14 shrink-0 sm:size-16" loading="lazy" />
       <div>
-        <p class="font-mono text-xs tracking-widest text-accent-700 uppercase sm:text-sm dark:text-accent-400">
+        <p class="text-xs font-semibold tracking-widest text-accent-700 uppercase">
           {t('certs.featured')} · {featuredCert.year}
         </p>
-        <h3 class="mt-2 text-xl font-semibold text-balance text-zinc-900 sm:text-3xl dark:text-zinc-50">
+        <h3 class="mt-2 text-lg font-bold text-balance text-ink sm:text-2xl">
           {featuredCert.name}
         </h3>
-        <p class="mt-3 max-w-3xl text-base leading-relaxed text-zinc-600 sm:text-lg dark:text-zinc-300">
+        <p class="mt-3 max-w-3xl text-base leading-relaxed text-zinc-600">
           {featuredCert.description[locale]}
         </p>
       </div>
     </div>
   </div>
 
-  <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
     {
       certCategories.map((category) => (
-        <div class="js-reveal rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900/40">
-          <h3 class="mb-4 font-mono text-xs tracking-widest text-accent-600 uppercase sm:text-sm dark:text-accent-400">
+        <div class="card js-reveal p-6">
+          <h3 class="mb-4 text-xs font-semibold tracking-widest text-accent-700 uppercase">
             {category.label[locale]}
           </h3>
           <ul class="space-y-3">
             {category.items.map((cert) => (
-              <li class="text-base leading-snug text-zinc-700 dark:text-zinc-300">
+              <li class="text-base leading-snug text-zinc-700">
                 {cert.name}
                 {cert.tag && (
-                  <span class="ml-1.5 rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-xs text-zinc-500 dark:bg-zinc-900 dark:text-zinc-300">
+                  <span class="ml-1.5 rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-xs text-zinc-500">
                     {typeof cert.tag === 'string' ? cert.tag : cert.tag[locale]}
                   </span>
                 )}
@@ -55,23 +69,5 @@ const t = useTranslations(locale);
         </div>
       ))
     }
-
-    <div class="js-reveal rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900/40">
-      <h3 class="mb-4 font-mono text-xs tracking-widest text-accent-600 uppercase sm:text-sm dark:text-accent-400">
-        {t('certs.languages')}
-      </h3>
-      <ul class="space-y-3">
-        {
-          languages.map((lang) => (
-            <li class="text-base leading-snug text-zinc-700 dark:text-zinc-300">
-              {lang.name[locale]}
-              <span class="ml-1.5 rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-xs text-zinc-500 dark:bg-zinc-900 dark:text-zinc-300">
-                {lang.level[locale]}
-              </span>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
   </div>
 </section>

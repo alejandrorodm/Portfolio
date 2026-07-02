@@ -40,7 +40,7 @@ const jsonLd = {
 ---
 
 <!doctype html>
-<html lang={locale} class="scheme-light dark:scheme-dark">
+<html lang={locale} class="scheme-light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -67,15 +67,11 @@ const jsonLd = {
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-    <!-- Tema: se ejecuta antes del primer paint para evitar flash -->
     <script is:inline>
       document.documentElement.classList.add('js');
-      const stored = localStorage.getItem('theme');
-      const dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.classList.toggle('dark', dark);
     </script>
   </head>
-  <body class="bg-white font-sans text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-300">
+  <body class="bg-surface font-sans text-zinc-700 antialiased">
     <slot />
 
     <script>

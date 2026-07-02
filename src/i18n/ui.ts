@@ -66,6 +66,14 @@ export const ui = {
   'certs.featured': { es: 'Certificación destacada', en: 'Featured certification' },
   'certs.languages': { es: 'Idiomas', en: 'Languages' },
 
+  'skills.title': { es: 'Habilidades', en: 'Skills' },
+  'edu.title': { es: 'Educación', en: 'Education' },
+  'edu.degree': { es: 'Grado en Ingeniería Informática', en: 'BSc in Computer Science Engineering' },
+  'edu.school': { es: 'Universidad de Málaga', en: 'Universidad de Málaga' },
+  'edu.period': { es: '2020 — 2025', en: '2020 — 2025' },
+  'edu.honors': { es: 'TFG: Sobresaliente (9,6)', en: 'Thesis: 9.6/10 with honors' },
+  'sidebar.availability': { es: 'Abierto a nuevos proyectos', en: 'Open to new projects' },
+
   'contact.title': { es: '¿Construimos algo juntos?', en: 'Let’s build something together' },
   'contact.sub': {
     es: 'Abierto a proyectos de IA aplicada, consultoría y buenas conversaciones técnicas. Respondo rápido.',

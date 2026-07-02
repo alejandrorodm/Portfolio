@@ -15,19 +15,31 @@ const featured = projects.filter((p) => p.featured);
 const rest = projects.filter((p) => !p.featured);
 ---
 
-<section id="work" class="mx-auto max-w-7xl scroll-mt-20 px-6 py-20 sm:py-24">
-  <SectionHeader overline="01" title={t('work.title')} sub={t('work.sub')} />
+<section id="work" class="scroll-mt-24">
+  <SectionHeader title={t('work.title')} sub={t('work.sub')}>
+    <svg
+      slot="icon"
+      class="size-4.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="m8 6-6 6 6 6"></path>
+      <path d="m16 6 6 6-6 6"></path>
+    </svg>
+  </SectionHeader>
 
-  <div
-    class="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:[&>*:last-child:nth-child(odd)]:col-span-2"
-  >
+  <div class="grid grid-cols-1 gap-5 xl:grid-cols-2 xl:[&>*:last-child:nth-child(odd)]:col-span-2">
     {featured.map((project) => <ProjectCard project={project} locale={locale} />)}
   </div>
 
-  <h3 class="js-reveal mt-14 mb-6 font-mono text-xs tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+  <h3 class="js-reveal mt-12 mb-6 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
     {t('work.more')}
   </h3>
-  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
     {rest.map((project) => <ProjectCard project={project} locale={locale} />)}
   </div>
 
@@ -36,10 +48,10 @@ const rest = projects.filter((p) => !p.featured);
       href="https://github.com/alejandrorodm"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 transition-colors hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+      class="group inline-flex items-center gap-2 text-sm font-semibold text-accent-700 transition-colors hover:text-accent-800"
     >
       {t('work.allGithub')}
-      <span aria-hidden="true">→</span>
+      <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
     </a>
   </div>
 </section>
@@ -47,7 +59,7 @@ const rest = projects.filter((p) => !p.featured);
 <!-- Lightbox para capturas -->
 <dialog
   id="lightbox"
-  class="m-auto max-h-[90vh] max-w-[90vw] rounded-xl bg-transparent p-0 backdrop:bg-zinc-950/80 backdrop:backdrop-blur-sm"
+  class="m-auto max-h-[90vh] max-w-[90vw] rounded-xl bg-transparent p-0 backdrop:bg-zinc-950/70 backdrop:backdrop-blur-sm"
 >
   <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] rounded-xl object-contain" />
 </dialog>
