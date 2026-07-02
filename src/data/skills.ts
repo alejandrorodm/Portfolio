@@ -16,8 +16,8 @@ export const coreStack: Skill[] = [
   { name: 'Azure', icon: '/icons/azure.svg' },
   { name: 'LangChain', icon: '/icons/langchain.svg', invert: true },
   { name: 'LangGraph', icon: '/icons/langgraph.svg', invert: true },
+  { name: 'RAG · FAISS' },
   { name: 'Docker', icon: '/icons/docker.svg' },
-  { name: 'TypeScript', icon: '/icons/typescript.svg' },
   { name: 'SQL', icon: '/icons/azuresql.svg', invert: true },
   { name: 'Git', icon: '/icons/git.svg' },
 ];
@@ -26,7 +26,6 @@ export const skillGroups: SkillGroup[] = [
   {
     label: { es: 'IA Generativa', en: 'Generative AI' },
     items: [
-      { name: 'RAG · FAISS' },
       { name: 'Azure OpenAI', icon: '/icons/openai.svg', invert: true },
       { name: 'Google Gemini', icon: '/icons/googlegemini.svg', invert: true },
       { name: 'AutoGen' },
