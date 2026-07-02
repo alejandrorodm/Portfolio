@@ -25,63 +25,61 @@ const bio = {
 <section id="about" class="mx-auto max-w-7xl scroll-mt-20 px-6 py-20 sm:py-24">
   <SectionHeader overline="03" title={t('about.title')} />
 
-  <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1fr]">
-    <div class="js-reveal space-y-5 text-base leading-relaxed text-pretty text-zinc-600 sm:text-lg dark:text-zinc-300">
-      {bio.map((paragraph) => <p>{paragraph}</p>)}
-    </div>
+  <div class="js-reveal grid max-w-none grid-cols-1 gap-x-16 gap-y-5 text-base leading-relaxed text-pretty text-zinc-600 sm:text-lg lg:grid-cols-2 dark:text-zinc-300">
+    {bio.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
 
-    <div class="js-reveal">
-      <h3 class="mb-3 font-mono text-xs tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-        {t('about.stack')}
-      </h3>
-      <ul class="flex flex-wrap gap-2">
-        {
-          coreStack.map((tech) => (
-            <li class="flex items-center gap-2 rounded-lg border border-accent-600/30 bg-accent-50/60 px-3.5 py-2 font-mono text-sm font-semibold text-zinc-800 dark:border-accent-400/25 dark:bg-accent-950/30 dark:text-zinc-100">
-              {tech.icon && (
-                <img
-                  src={tech.icon}
-                  alt=""
-                  width="18"
-                  height="18"
-                  loading="lazy"
-                  class:list={['size-4.5', tech.invert && 'dark:invert']}
-                />
-              )}
-              {tech.name}
-            </li>
-          ))
-        }
-      </ul>
+  <div class="js-reveal mt-14">
+    <h3 class="mb-4 font-mono text-xs tracking-widest text-zinc-500 uppercase sm:text-sm dark:text-zinc-400">
+      {t('about.stack')}
+    </h3>
+    <ul class="flex flex-wrap gap-2">
+      {
+        coreStack.map((tech) => (
+          <li class="flex items-center gap-2 rounded-lg border border-accent-600/30 bg-accent-50/60 px-3.5 py-2 font-mono text-sm font-semibold text-zinc-800 dark:border-accent-400/25 dark:bg-accent-950/30 dark:text-zinc-100">
+            {tech.icon && (
+              <img
+                src={tech.icon}
+                alt=""
+                width="18"
+                height="18"
+                loading="lazy"
+                class:list={['size-4.5', tech.invert && 'dark:invert']}
+              />
+            )}
+            {tech.name}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 
-      <div class="mt-9 space-y-7">
-        {
-          skillGroups.map((group) => (
-            <div>
-              <h4 class="mb-3 font-mono text-xs tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                {group.label[locale]}
-              </h4>
-              <ul class="flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <li class="flex items-center gap-1.5 rounded-md bg-zinc-100 px-2.5 py-1.5 text-sm font-medium text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-200">
-                    {item.icon && (
-                      <img
-                        src={item.icon}
-                        alt=""
-                        width="16"
-                        height="16"
-                        loading="lazy"
-                        class:list={['size-4', item.invert && 'dark:invert']}
-                      />
-                    )}
-                    {item.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
-    </div>
+  <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      skillGroups.map((group) => (
+        <div class="js-reveal rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/40">
+          <h4 class="mb-4 font-mono text-xs tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+            {group.label[locale]}
+          </h4>
+          <ul class="flex flex-wrap gap-2">
+            {group.items.map((item) => (
+              <li class="flex items-center gap-1.5 rounded-md bg-zinc-100 px-2.5 py-1.5 text-sm font-medium text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-200">
+                {item.icon && (
+                  <img
+                    src={item.icon}
+                    alt=""
+                    width="16"
+                    height="16"
+                    loading="lazy"
+                    class:list={['size-4', item.invert && 'dark:invert']}
+                  />
+                )}
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
   </div>
 </section>
