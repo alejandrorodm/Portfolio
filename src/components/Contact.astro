@@ -9,56 +9,43 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<section id="contact" class="scroll-mt-24 border-t border-zinc-200/80 bg-white">
-  <div class="mx-auto max-w-7xl px-6 py-20 sm:py-28">
-    <div class="js-reveal mx-auto max-w-2xl text-center">
-      <span
-        class="mx-auto mb-5 flex size-12 items-center justify-center rounded-xl bg-accent-50 text-accent-600 ring-1 ring-accent-100"
-        aria-hidden="true"
-      >
-        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-          <path d="m22 7-10 6L2 7"></path>
-        </svg>
-      </span>
-      <h2 class="text-3xl font-bold tracking-tight text-balance text-ink sm:text-5xl">
+<section id="contacto" class="border-t border-line">
+  <div class="mx-auto max-w-6xl scroll-mt-24 px-6 py-24 sm:px-10 sm:py-32">
+    <div class="js-reveal max-w-3xl space-y-8">
+      <p class="meta">{t('nav.contact')}</p>
+      <h2 class="font-display text-5xl leading-[1.08] font-medium tracking-tight text-balance sm:text-6xl">
         {t('contact.title')}
       </h2>
-      <p class="mt-5 text-base leading-relaxed text-pretty text-zinc-600 sm:text-lg">
-        {t('contact.sub')}
-      </p>
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <p class="max-w-xl text-lg leading-relaxed text-mist">{t('contact.sub')}</p>
+      <a
+        href="mailto:correo@alejandrorodm.com"
+        class="inline-block rounded-md bg-ember px-8 py-4 text-base font-semibold text-night transition-transform duration-200 hover:-translate-y-0.5"
+      >
+        correo@alejandrorodm.com
+      </a>
+    </div>
+
+    <footer class="mt-24 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <p class="font-mono text-xs tracking-wider text-mist">{t('footer.crafted')}</p>
+      <div class="flex items-center gap-7 font-mono text-xs tracking-widest uppercase">
         <a
-          href="mailto:correo@alejandrorodm.com"
-          class="rounded-lg bg-accent-600 px-6 py-3 text-sm font-medium text-white shadow-soft transition-[background-color,box-shadow] hover:bg-accent-700 hover:shadow-lift"
+          href="https://github.com/alejandrorodm"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-mist transition-colors hover:text-fog"
         >
-          {t('contact.email')}
+          GitHub
         </a>
         <a
           href="https://www.linkedin.com/in/alejandrorodmoreno/"
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-lg border border-zinc-300 bg-white px-6 py-3 text-sm font-medium text-zinc-700 transition-colors hover:border-accent-300 hover:text-accent-700"
+          class="text-mist transition-colors hover:text-fog"
         >
           LinkedIn
         </a>
-        <a
-          href="https://github.com/alejandrorodm"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="rounded-lg border border-zinc-300 bg-white px-6 py-3 text-sm font-medium text-zinc-700 transition-colors hover:border-accent-300 hover:text-accent-700"
-        >
-          GitHub
-        </a>
+        <span class="text-mist/60">© 2026</span>
       </div>
-      <p class="mt-8 font-mono text-sm text-zinc-500">correo@alejandrorodm.com</p>
-    </div>
+    </footer>
   </div>
-
-  <footer class="border-t border-zinc-200/80">
-    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-6 py-8 text-sm text-zinc-500">
-      <p>© 2026 Alejandro Rodríguez Moreno</p>
-      <p>{t('footer.rights')}</p>
-    </div>
-  </footer>
 </section>

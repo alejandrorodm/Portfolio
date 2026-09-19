@@ -1,5 +1,5 @@
 ---
-import SectionHeader from './SectionHeader.astro';
+import { coreStack } from '../data/skills';
 import { useTranslations, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -11,34 +11,27 @@ const t = useTranslations(locale);
 
 const bio = {
   es: [
-    'Soy ingeniero de datos e IA en EY, donde diseño y despliego soluciones de IA Generativa y arquitecturas cloud: sistemas RAG optimizados con FAISS, pipelines de OCR serverless y motores de generación automática de informes que ya están en producción.',
-    'Me interesa la parte del trabajo donde la IA deja de ser una demo y se convierte en un sistema fiable: tests, monitorización, coste por inferencia y arquitectura. Fuera del trabajo construyo proyectos propios — desde herramientas de ciberseguridad con agentes hasta apps móviles — y doy mentoría de algoritmos y programación.',
+    'Soy ingeniero de Datos e IA en EY, donde diseño y despliego soluciones de IA Generativa y arquitecturas cloud: sistemas RAG optimizados con FAISS, pipelines de OCR serverless y motores de generación automática de informes que ya están en producción.',
+    'Me interesa la parte del trabajo donde la IA deja de ser una demo y se convierte en un sistema fiable: tests, monitorización, coste por inferencia y arquitectura. Fuera del trabajo construyo proyectos propios y doy mentoría de algoritmos y programación.',
   ],
   en: [
     'I’m a Data & AI engineer at EY, where I design and deploy Generative AI solutions and cloud architectures: FAISS-optimized RAG systems, serverless OCR pipelines and automated report generation engines that are already running in production.',
-    'I care about the part of the job where AI stops being a demo and becomes a reliable system: tests, monitoring, cost per inference and architecture. Outside work I build my own projects — from agentic cybersecurity tools to mobile apps — and mentor students in algorithms and programming.',
+    'I care about the part of the job where AI stops being a demo and becomes a reliable system: tests, monitoring, cost per inference and architecture. Outside work I build my own projects and mentor students in algorithms and programming.',
   ],
 }[locale];
 ---
 
-<section id="about" class="scroll-mt-24">
-  <SectionHeader title={t('about.title')}>
-    <svg
-      slot="icon"
-      class="size-4.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <circle cx="12" cy="8" r="4"></circle>
-      <path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"></path>
-    </svg>
-  </SectionHeader>
-
-  <div class="card js-reveal space-y-5 p-6 text-base leading-relaxed text-pretty text-zinc-600 sm:p-8 sm:text-lg">
-    {bio.map((paragraph) => <p>{paragraph}</p>)}
+<section id="sobre-mi" class="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 sm:px-10 sm:py-28">
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-20">
+    <h2 class="js-reveal font-display text-4xl font-medium tracking-tight sm:text-5xl lg:text-3xl">
+      {t('about.title')}
+    </h2>
+    <div class="js-reveal max-w-2xl space-y-6">
+      {bio.map((paragraph) => <p class="text-lg leading-relaxed text-mist">{paragraph}</p>)}
+      <p class="pt-2 font-mono text-xs leading-loose tracking-wider text-mist">
+        <span class="text-ember">{t('about.stack')}:</span>
+        {' ' + coreStack.map((skill) => skill.name).join(' · ')}
+      </p>
+    </div>
   </div>
 </section>

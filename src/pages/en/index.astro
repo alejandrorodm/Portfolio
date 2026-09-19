@@ -2,11 +2,10 @@
 import Base from '../../layouts/Base.astro';
 import Nav from '../../components/Nav.astro';
 import Hero from '../../components/Hero.astro';
-import Sidebar from '../../components/Sidebar.astro';
-import About from '../../components/About.astro';
-import Experience from '../../components/Experience.astro';
+import Metrics from '../../components/Metrics.astro';
 import Work from '../../components/Work.astro';
-import Certifications from '../../components/Certifications.astro';
+import Experience from '../../components/Experience.astro';
+import About from '../../components/About.astro';
 import Contact from '../../components/Contact.astro';
 
 const locale = 'en';
@@ -16,17 +15,10 @@ const locale = 'en';
   <Nav locale={locale} />
   <main>
     <Hero locale={locale} />
-
-    <div class="mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-6 py-16 sm:py-20 lg:grid-cols-[20rem_minmax(0,1fr)]">
-      <Sidebar locale={locale} />
-      <div class="min-w-0 space-y-16 sm:space-y-20">
-        <About locale={locale} />
-        <Experience locale={locale} />
-        <Work locale={locale} />
-        <Certifications locale={locale} />
-      </div>
-    </div>
-
+    <Metrics locale={locale} />
+    <Work locale={locale} />
+    <Experience locale={locale} />
+    <About locale={locale} />
     <Contact locale={locale} />
   </main>
 </Base>

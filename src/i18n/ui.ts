@@ -87,6 +87,14 @@ export const ui = {
   },
   'theme.toggle': { es: 'Cambiar tema', en: 'Toggle theme' },
   'lang.switch': { es: 'Switch to English', en: 'Cambiar a español' },
+
+  'hero.photoCaption': { es: 'Málaga, de noche', en: 'Málaga, by night' },
+  'work.caseOpen': { es: 'Leer el caso de estudio', en: 'Read the case study' },
+  'work.selected': { es: 'Trabajo seleccionado', en: 'Selected work' },
+  'footer.crafted': {
+    es: 'Diseñado y construido a mano en Málaga — sin plantillas.',
+    en: 'Designed and built by hand in Málaga — no templates.',
+  },
 } satisfies Record<string, Localized>;
 
 export type UiKey = keyof typeof ui;

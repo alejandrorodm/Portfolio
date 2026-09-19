@@ -1,0 +1,35 @@
+---
+import { featuredCert } from '../data/certifications';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const metrics = [
+  { value: '+90%', label: t('metrics.efficiency') },
+  { value: '−75%', label: t('metrics.costs') },
+];
+---
+
+<section class="border-y border-line">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-line px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-10">
+    {
+      metrics.map((metric) => (
+        <div class="js-reveal flex flex-col gap-2 py-9 sm:px-8 sm:first:pl-0">
+          <span class="font-display text-5xl font-medium text-fog">{metric.value}</span>
+          <span class="text-sm leading-relaxed text-mist">{metric.label}</span>
+        </div>
+      ))
+    }
+    <div class="js-reveal flex flex-col justify-center gap-2 py-9 sm:px-8">
+      <span class="font-display text-xl leading-snug font-medium text-fog">
+        Databricks Certified GenAI Engineer
+      </span>
+      <span class="text-sm text-mist">{t('certs.featured')} · {featuredCert.year}</span>
+    </div>
+  </div>
+</section>

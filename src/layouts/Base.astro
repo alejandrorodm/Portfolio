@@ -1,5 +1,6 @@
 ---
-import '@fontsource-variable/inter';
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/instrument-sans';
 import '@fontsource-variable/jetbrains-mono';
 import '../styles/global.css';
 import { localePath, useTranslations, type Locale } from '../i18n/ui';
@@ -14,7 +15,7 @@ const t = useTranslations(locale);
 const canonical = new URL(localePath(locale), Astro.site);
 const alternateEs = new URL(localePath('es'), Astro.site);
 const alternateEn = new URL(localePath('en'), Astro.site);
-const ogImage = new URL('/avatar.jpeg', Astro.site);
+const ogImage = new URL('/foto-perfil.jpg', Astro.site);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -40,7 +41,7 @@ const jsonLd = {
 ---
 
 <!doctype html>
-<html lang={locale} class="scheme-light">
+<html lang={locale} class="scheme-dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,7 +72,7 @@ const jsonLd = {
       document.documentElement.classList.add('js');
     </script>
   </head>
-  <body class="bg-surface font-sans text-zinc-700 antialiased">
+  <body class="bg-night font-sans text-fog antialiased">
     <slot />
 
     <script>

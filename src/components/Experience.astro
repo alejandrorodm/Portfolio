@@ -1,5 +1,4 @@
 ---
-import SectionHeader from './SectionHeader.astro';
 import { experience } from '../data/experience';
 import { useTranslations, type Locale } from '../i18n/ui';
 
@@ -11,78 +10,44 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<section id="experience" class="scroll-mt-24">
-  <SectionHeader title={t('exp.title')}>
-    <svg
-      slot="icon"
-      class="size-4.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <rect x="2" y="7" width="20" height="14" rx="2"></rect>
-      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
-      <path d="M2 12h20"></path>
-    </svg>
-  </SectionHeader>
+<section id="trayectoria" class="border-y border-line bg-panel">
+  <div class="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 sm:px-10 sm:py-28">
+    <h2 class="js-reveal font-display text-4xl font-medium tracking-tight sm:text-5xl">
+      {t('exp.title')}
+    </h2>
 
-  <ol class="relative space-y-8 border-l-2 border-accent-100 pl-6 sm:pl-8">
-    {
-      experience.map((job) => (
-        <li class="js-reveal relative">
-          <span
-            class="absolute top-7 -left-[calc(1.5rem+5px)] size-3 rounded-full bg-accent-600 ring-4 ring-accent-100 sm:-left-[calc(2rem+5px)]"
-            aria-hidden="true"
-          />
-          <article class="card p-6 transition-shadow hover:shadow-lift sm:p-8">
-            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1.5">
-              <h3 class="text-lg font-bold text-ink sm:text-xl">{job.role[locale]}</h3>
-              <p class="rounded-full bg-zinc-100 px-3 py-1 font-mono text-xs text-zinc-600">
-                {job.period[locale]}
-              </p>
+    <div class="mt-12 divide-y divide-line">
+      {
+        experience.map((job) => (
+          <div class="js-reveal grid grid-cols-1 gap-3 py-9 sm:grid-cols-[13rem_minmax(0,1fr)_auto] sm:gap-8">
+            <span class="font-mono text-xs tracking-widest text-mist uppercase sm:pt-1.5">
+              {job.period[locale]}
+            </span>
+            <div class="space-y-1.5">
+              <h3 class="text-xl font-semibold text-fog">{job.role[locale]}</h3>
+              <p class="text-sm text-mist">{job.company}</p>
             </div>
-            <p class="mt-1 text-base font-medium text-accent-700">{job.company}</p>
-
             {job.metric && (
-              <p class="mt-4 flex items-baseline gap-2.5 rounded-lg bg-accent-50 px-4 py-3">
-                <span class="font-mono text-2xl font-semibold text-accent-700">{job.metric.value}</span>
-                <span class="text-sm leading-snug text-zinc-600">{job.metric.label[locale]}</span>
-              </p>
-            )}
-
-            {job.bullets && (
-              <ul class="mt-5 space-y-2.5">
-                {job.bullets.map((bullet) => (
-                  <li class="flex gap-3 text-base leading-relaxed text-zinc-600">
-                    <span class="mt-2.5 size-1.5 shrink-0 rounded-full bg-accent-500" aria-hidden="true" />
-                    {bullet[locale]}
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {job.projects?.map((project) => (
-              <div class="mt-6 border-l-2 border-accent-200 pl-5">
-                <p class="text-base font-semibold text-zinc-900">
-                  {project.name[locale]}
-                  <span class="ml-2 font-mono text-xs font-normal text-zinc-500">{project.period[locale]}</span>
+              <div class="sm:text-right">
+                <span class="font-display text-3xl font-medium text-ember">{job.metric.value}</span>
+                <p class="mt-1 max-w-[14rem] text-xs leading-relaxed text-mist sm:ml-auto">
+                  {job.metric.label[locale]}
                 </p>
-                <ul class="mt-3 space-y-2.5">
-                  {project.bullets.map((bullet) => (
-                    <li class="flex gap-3 text-base leading-relaxed text-zinc-600">
-                      <span class="mt-2.5 size-1.5 shrink-0 rounded-full bg-accent-500" aria-hidden="true" />
-                      {bullet[locale]}
-                    </li>
-                  ))}
-                </ul>
               </div>
-            ))}
-          </article>
-        </li>
-      ))
-    }
-  </ol>
+            )}
+          </div>
+        ))
+      }
+
+      <div class="js-reveal grid grid-cols-1 gap-3 py-9 sm:grid-cols-[13rem_minmax(0,1fr)_auto] sm:gap-8">
+        <span class="font-mono text-xs tracking-widest text-mist uppercase sm:pt-1.5">
+          {t('edu.period')}
+        </span>
+        <div class="space-y-1.5">
+          <h3 class="text-xl font-semibold text-fog">{t('edu.degree')}</h3>
+          <p class="text-sm text-mist">{t('edu.school')} · {t('edu.honors')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

@@ -1,6 +1,4 @@
 ---
-import ProjectCard from './ProjectCard.astro';
-import SectionHeader from './SectionHeader.astro';
 import { projects } from '../data/projects';
 import { useTranslations, type Locale } from '../i18n/ui';
 
@@ -11,36 +9,71 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const featured = projects.filter((p) => p.featured);
-const rest = projects.filter((p) => !p.featured);
+const selected = projects.filter((p) => p.featured).slice(0, 3);
+
+function title(p: (typeof projects)[number]): string {
+  return typeof p.title === 'string' ? p.title : p.title[locale];
+}
 ---
 
-<section id="work" class="scroll-mt-24">
-  <SectionHeader title={t('work.title')} sub={t('work.sub')}>
-    <svg
-      slot="icon"
-      class="size-4.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path d="m8 6-6 6 6 6"></path>
-      <path d="m16 6 6 6-6 6"></path>
-    </svg>
-  </SectionHeader>
-
-  <div class="grid grid-cols-1 gap-5 xl:grid-cols-2 xl:[&>*:last-child:nth-child(odd)]:col-span-2">
-    {featured.map((project) => <ProjectCard project={project} locale={locale} />)}
+<section id="proyectos" class="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 sm:px-10 sm:py-28">
+  <div class="js-reveal mb-4 flex items-baseline justify-between gap-6">
+    <h2 class="font-display text-4xl font-medium tracking-tight sm:text-5xl">{t('work.title')}</h2>
+    <span class="meta hidden sm:block">{t('work.selected')}</span>
   </div>
+  <p class="js-reveal max-w-xl text-base text-mist">{t('work.sub')}</p>
 
-  <h3 class="js-reveal mt-12 mb-6 text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-    {t('work.more')}
-  </h3>
-  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-    {rest.map((project) => <ProjectCard project={project} locale={locale} />)}
+  <div class="mt-6 divide-y divide-line border-y border-line">
+    {
+      selected.map((project, index) => (
+        <article class="js-reveal grid grid-cols-1 gap-6 py-12 lg:grid-cols-[5rem_minmax(0,1fr)_16rem] lg:gap-10">
+          <span class="font-mono text-sm text-mist pt-1.5">/0{index + 1}</span>
+
+          <div class="space-y-4">
+            <p class="meta text-ember">{project.overline[locale]}</p>
+            <h3 class="font-display text-3xl font-medium tracking-tight">{title(project)}</h3>
+            <p class="max-w-xl leading-relaxed text-mist">{project.description[locale]}</p>
+
+            {project.caseStudy && (
+              <details class="group max-w-xl">
+                <summary class="cursor-pointer list-none border-b border-mist/40 pb-1 text-sm font-medium text-fog transition-colors hover:border-ember hover:text-ember [&::-webkit-details-marker]:hidden inline-block">
+                  {t('work.caseOpen')}
+                  <span class="ml-1 inline-block transition-transform group-open:rotate-90">→</span>
+                </summary>
+                <dl class="mt-6 space-y-5 border-l border-ember/40 pl-5 text-sm leading-relaxed">
+                  <div>
+                    <dt class="meta mb-1">{t('work.problem')}</dt>
+                    <dd class="text-mist">{project.caseStudy.problem[locale]}</dd>
+                  </div>
+                  <div>
+                    <dt class="meta mb-1">{t('work.solution')}</dt>
+                    <dd class="text-mist">{project.caseStudy.solution[locale]}</dd>
+                  </div>
+                  <div>
+                    <dt class="meta mb-1">{t('work.results')}</dt>
+                    <dd class="text-mist">{project.caseStudy.results[locale]}</dd>
+                  </div>
+                </dl>
+              </details>
+            )}
+          </div>
+
+          <div class="flex flex-col gap-4 lg:items-end lg:pt-1.5 lg:text-right">
+            <span class="font-mono text-xs leading-loose text-mist">{project.tech.join(' · ')}</span>
+            {project.repo && (
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-medium text-fog transition-colors hover:text-ember"
+              >
+                {t('work.viewRepo')} ↗
+              </a>
+            )}
+          </div>
+        </article>
+      ))
+    }
   </div>
 
   <div class="js-reveal mt-10">
@@ -48,34 +81,9 @@ const rest = projects.filter((p) => !p.featured);
       href="https://github.com/alejandrorodm"
       target="_blank"
       rel="noopener noreferrer"
-      class="group inline-flex items-center gap-2 text-sm font-semibold text-accent-700 transition-colors hover:text-accent-800"
+      class="border-b border-mist/50 pb-1 text-base font-medium text-fog transition-colors hover:border-ember hover:text-ember"
     >
-      {t('work.allGithub')}
-      <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+      {t('work.allGithub')} ↗
     </a>
   </div>
 </section>
-
-<!-- Lightbox para capturas -->
-<dialog
-  id="lightbox"
-  class="m-auto max-h-[90vh] max-w-[90vw] rounded-xl bg-transparent p-0 backdrop:bg-zinc-950/70 backdrop:backdrop-blur-sm"
->
-  <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] rounded-xl object-contain" />
-</dialog>
-
-<script>
-  const lightbox = document.getElementById('lightbox') as HTMLDialogElement | null;
-  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
-
-  document.querySelectorAll<HTMLImageElement>('[data-lightbox]').forEach((img) => {
-    img.addEventListener('click', () => {
-      if (!lightbox || !lightboxImg) return;
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.showModal();
-    });
-  });
-
-  lightbox?.addEventListener('click', () => lightbox.close());
-</script>
