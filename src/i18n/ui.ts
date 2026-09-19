@@ -88,7 +88,7 @@ export const ui = {
   'theme.toggle': { es: 'Cambiar tema', en: 'Toggle theme' },
   'lang.switch': { es: 'Switch to English', en: 'Cambiar a español' },
 
-  'hero.photoCaption': { es: 'Málaga, de noche', en: 'Málaga, by night' },
+  'hero.photoCaption': { es: 'Málaga', en: 'Málaga' },
   'work.caseOpen': { es: 'Leer el caso de estudio', en: 'Read the case study' },
   'work.selected': { es: 'Trabajo seleccionado', en: 'Selected work' },
   'footer.crafted': {
