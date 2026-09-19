@@ -26,6 +26,9 @@ const t = useTranslations(locale);
             <div class="space-y-1.5">
               <h3 class="text-xl font-semibold text-fog">{job.role[locale]}</h3>
               <p class="text-sm text-mist">{job.company}</p>
+              {job.stack && (
+                <p class="pt-1 font-mono text-xs leading-loose text-mist/80">{job.stack.join(' · ')}</p>
+              )}
             </div>
             {job.metric && (
               <div class="sm:text-right">

@@ -11,6 +11,7 @@ export interface Experience {
   company: string;
   period: Localized;
   metric?: { value: string; label: Localized };
+  stack?: string[];
   bullets?: Localized[];
   projects?: ExperienceProject[];
 }
@@ -27,6 +28,7 @@ export const experience: Experience[] = [
         en: 'efficiency in automated document workflows',
       },
     },
+    stack: ['Python', 'FastAPI', 'Azure OpenAI', 'RAG · FAISS', 'MongoDB', 'Docker', 'Angular'],
     projects: [
       {
         name: {
@@ -91,6 +93,7 @@ export const experience: Experience[] = [
         en: 'inference cost by optimizing LLM context',
       },
     },
+    stack: ['Python', 'RAG', 'Flask', 'SQL', 'Mistral'],
     bullets: [
       {
         es: 'Sistema RAG para la generación de casos de prueba industriales, servido mediante APIs REST en Flask con persistencia y consultas en SQL (SQLite).',
@@ -106,6 +109,7 @@ export const experience: Experience[] = [
     role: { es: 'Instructor técnico y mentor académico', en: 'Technical instructor & academic mentor' },
     company: 'Freelance · UMA',
     period: { es: 'Sep 2023 — Actualidad', en: 'Sep 2023 — Present' },
+    stack: ['C++', 'Python', 'SQL', 'Algorithms'],
     bullets: [
       {
         es: 'Mentoría avanzada en análisis de algoritmos (backtracking, programación dinámica, complejidad) y programación en C++ y Python.',
